@@ -26,13 +26,13 @@ const dict = await import(`../../locales/${locale}.json`).then((m) => m.default)
       </header>
 
       <!-- Game iframe -->
-      <div class="w-full max-w-5xl aspect-video bg-gray-100 flex items-center justify-center border rounded-lg shadow-md">
-        <iframe 
-          title="BomberMan"
-          src="https://games-dun-one.vercel.app/BomberMan/index.html" 
-          class="w-full h-full rounded-lg"
-          allowfullscreen
-        ></iframe>
+      <div class="w-full max-w-5xl bg-gray-100 flex items-center justify-center border rounded-lg shadow-md">
+        <!-- Charge directement ton jeu depuis /public/freecell/ -->
+        <object 
+          type="text/html" 
+          data="/freecell/index.html" 
+          class="w-full h-[80vh] rounded-lg">
+        </object>
       </div>
 
       <!-- Bottom Ad -->
