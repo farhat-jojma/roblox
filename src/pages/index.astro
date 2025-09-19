@@ -1,11 +1,11 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+export const prerender = false;
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import { resolveLang } from "../lib/i18n";
+
+const acceptLang = Astro.request.headers.get("accept-language") || "";
+const browserLang = acceptLang.split(",")[0].split("-")[0];
+const targetLang = resolveLang(browserLang);
+
+Astro.redirect(`/${targetLang}/`);
 ---
-
-<Layout>
-	<Welcome />
-</Layout>

@@ -1,0 +1,18 @@
+---
+import { getLangStaticPaths, resolveLang } from "../../lib/i18n";
+import Layout from "../../layouts/Layout.astro";
+
+
+export async function getStaticPaths() {
+  return getLangStaticPaths();
+}
+
+const locale = resolveLang(Astro.params.lang);
+const dict = await import(`../../locales/${locale}.json`).then((m) => m.default);
+---
+
+<Layout lang={locale} title={dict.play}>
+  <h1 class="text-3xl font-bold mt-10">{dict.play}</h1>
+  <a href={`/${locale}/`} class="text-blue-600 underline">⬅ Back</a>
+</Layout>
+
