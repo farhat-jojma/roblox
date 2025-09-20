@@ -1,5 +1,26 @@
 {
   "title": "Bienvenido a mi juego",
   "play": "Jugar ahora",
-  "enjoy": "¡Disfruta del juego!"
+  "enjoy": "¡Disfruta del juego!",
+  "subtitle": "Un juego de cartas solitario clásico",
+  "cta": "Jugar Ahora",
+  "howToPlayTitle": "Cómo Jugar",
+  "howToPlaySteps": [
+    "Mueve todas las cartas a las pilas de fundación.",
+    "Usa las celdas libres para mantener cartas temporalmente.",
+    "Construye columnas de tablero en orden descendente y colores alternos."
+  ],
+  "nav": {
+    "home": "Inicio",
+    "about": "Acerca de",
+    "privacy": "Política de Privacidad",
+    "terms": "Términos de Servicio"
+  },
+  "aboutTitle": "Acerca de nosotros",
+  "aboutContent": "¡Bienvenido a nuestro sitio! Ofrecemos los mejores juegos en línea gratuitos para que todos disfruten.",
+  "privacyTitle": "Política de Privacidad",
+  "privacyContent": "Tu privacidad es importante para nosotros. Esta página explica cómo recopilamos y usamos tus datos.",
+  "termsTitle": "Términos de Servicio",
+  "termsContent": "Al usar este sitio, aceptas cumplir con estas reglas y condiciones."
+
 }

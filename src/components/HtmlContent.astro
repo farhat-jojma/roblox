@@ -1,0 +1,29 @@
+---
+import fs from "fs";
+
+const { slug, locale, fallbackText = "Content not available." } = Astro.props;
+
+// chemins possibles (fallback anglais si pas trouvé)
+const paths = [
+  `public/${slug}/${slug}.${locale}.html`,
+  `public/${slug}/${slug}.en.html`
+];
+
+let html = "";
+for (const p of paths) {
+  try {
+    html = fs.readFileSync(p, "utf-8");
+    break;
+  } catch {
+    // fichier manquant → on continue
+  }
+}
+---
+
+{html ? (
+  <article class="prose max-w-none">
+    <Fragment set:html={html} />
+  </article>
+) : (
+  <p class="text-gray-500">{fallbackText}</p>
+)}

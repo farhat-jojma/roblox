@@ -1,5 +1,26 @@
 {
   "title": "Bienvenue dans mon jeu",
   "play": "Jouer maintenant",
-  "enjoy": "Profite du jeu !"
+  "enjoy": "Profite du jeu !",
+  "subtitle": "Un jeu de cartes solitaire classique",
+  "cta": "Jouer Maintenant",
+  "howToPlayTitle": "Comment Jouer",
+  "howToPlaySteps": [
+    "Déplacez toutes les cartes vers les piles de fondation.",
+    "Utilisez les cellules libres pour tenir temporairement les cartes.",
+    "Construisez les colonnes de tableau en ordre décroissant et couleurs alternées."
+  ],
+  "nav": {
+    "home": "Accueil",
+    "about": "À Propos",
+    "privacy": "Politique de Confidentialité",
+    "terms": "Conditions de Service"
+  },
+  "aboutTitle": "À propos de nous",
+  "aboutContent": "Bienvenue sur notre site ! Nous offrons les meilleurs jeux en ligne gratuits pour tous.",
+  "privacyTitle": "Politique de confidentialité",
+  "privacyContent": "Votre vie privée est importante pour nous. Cette page explique comment nous collectons et utilisons vos données.",
+  "termsTitle": "Conditions d’utilisation",
+  "termsContent": "En utilisant ce site, vous acceptez de suivre ces règles et conditions."
+
 }

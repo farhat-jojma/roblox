@@ -1,1 +1,6 @@
 @import "tailwindcss";
+
+body {
+  padding-top: 56px; /* hauteur de la nav */
+  /* Supprimé les restrictions de height et overflow qui affectaient toutes les pages */
+}

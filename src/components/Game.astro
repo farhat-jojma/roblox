@@ -1,0 +1,16 @@
+---
+const { path = "/freecell/index.html" } = Astro.props;
+---
+
+<div class="w-full max-w-5xl bg-gray-100 flex items-center justify-center border rounded-lg shadow-md mt-10 mx-auto">
+
+
+  <object
+    type="text/html"
+    data={path}
+    title="FreeCell Game"
+    aria-label="Embedded FreeCell game"
+    aria-labelledby="freecell-title"
+    class="w-full h-[80vh] rounded-lg"
+  ></object>
+</div>

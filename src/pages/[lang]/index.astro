@@ -1,5 +1,17 @@
 ---
+import Hero from "../../components/Hero.astro";
+import Game from "../../components/Game.astro";
 import Layout from "../../layouts/Layout.astro";
+import OtherGames from "../../components/OtherGames.astro";
+import HowToPlay from "../../components/HowToPlay.astro";
+import Controls from "../../components/Controls.astro";
+import Tips from "../../components/Tips.astro";
+import Features from "../../components/Features.astro";
+import Unblocked from "../../components/Unblocked.astro";
+import Online from "../../components/Online.astro";
+import Faq from "../../components/Faq.astro";
+import Platform from "../../components/Platform.astro";
+
 import { getLangStaticPaths, resolveLang } from "../../lib/i18n";
 
 export async function getStaticPaths() {
@@ -10,48 +22,12 @@ const locale = resolveLang(Astro.params.lang);
 const dict = await import(`../../locales/${locale}.json`).then((m) => m.default);
 ---
 
-<Layout lang={locale} title={dict.title}>
-  <div class="flex min-h-screen bg-white">
-    <!-- Left Ad -->
-    <!-- <aside class="hidden md:flex w-40 items-center justify-center border-4">
-     
-    </aside> -->
-
-    <!-- Game Area (centered div for iframe later) -->
+<Layout lang={locale} title={dict.title} isHomePage={true}>
+  <div class="flex bg-white h-full">
     <main class="flex-1 flex flex-col items-center justify-center px-4">
-      <!-- Header -->
-      <header class="mb-6 text-center">
-        <h1 class="text-lg font-bold">{dict.title}</h1>
-        <p class="text-sm text-gray-600">{dict.enjoy}</p>
-      </header>
-
-      <!-- Game iframe -->
-      <div class="w-full max-w-5xl bg-gray-100 flex items-center justify-center border rounded-lg shadow-md">
-        <!-- Charge directement ton jeu depuis /public/freecell/ -->
-        <object 
-          type="text/html" 
-          data="/freecell/index.html" 
-          class="w-full h-[80vh] rounded-lg">
-        </object>
+      <div class="w-full max-w-6xl">
+        <Game path="/freecell/index.html" />
       </div>
-
-      <!-- Bottom Ad -->
-      <!-- <div class="mt-10 w-full flex justify-center border-4">
-        
-      </div> -->
     </main>
-
-    <!-- Right Ad -->
-    <!-- <aside class="hidden md:flex w-40 items-center justify-center border-4">
-      <ins class="adsbygoogle"
-           style="display:block"
-           data-ad-client="ca-pub-XXXXXXX"
-           data-ad-slot="3333333333"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
-      <script>
-        (window.adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-    </aside> -->
   </div>
 </Layout>

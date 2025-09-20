@@ -1,5 +1,6 @@
 ---
-const { lang = "en", title = "Astro Basics" } = Astro.props;
+import Nav from "../components/Nav.astro";
+const { lang = "en", title = "Astro Basics", isHomePage = false } = Astro.props;
 ---
 
 <!doctype html>
@@ -18,8 +19,14 @@ const { lang = "en", title = "Astro Basics" } = Astro.props;
       crossorigin="anonymous"
     ></script>
   </head>
-  <body>
-    <slot />
+  <body class={`bg-gray-50 text-gray-900 ${isHomePage ? 'home-page' : ''}`}>
+    <!-- ✅ Navigation -->
+    <Nav siteName="FreeCell Online" />
+
+    <!-- ✅ Page content -->
+    <main class={isHomePage ? '' : 'min-h-screen'}>
+      <slot />
+    </main>
   </body>
 </html>
 
@@ -28,6 +35,23 @@ const { lang = "en", title = "Astro Basics" } = Astro.props;
   body {
     margin: 0;
     width: 100%;
-    height: 100%;
+  }
+  
+  /* Styles normaux pour toutes les pages */
+  html,
+  body {
+    height: auto;
+    overflow: auto;
+  }
+  
+  /* Styles spécifiques pour la page d'accueil */
+  body.home-page {
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  body.home-page main {
+    height: calc(100vh - 56px);
+    overflow: hidden;
   }
 </style>

@@ -1,5 +1,26 @@
 {
   "title": "Welcome to My Game",
   "play": "Play Now",
-  "enjoy": "Enjoy the game!"
+  "enjoy": "Enjoy the game!",
+  "subtitle": "A classic solitaire card game",
+  "cta": "Play Now",
+  "howToPlayTitle": "How to Play",
+  "howToPlaySteps": [
+    "Move all cards to the foundation piles.",
+    "Use free cells to temporarily hold cards.",
+    "Build tableau columns in descending order and alternating colors."
+  ],
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  },
+  "aboutTitle": "About Us",
+  "aboutContent": "Welcome to our site! We provide the best free online games for everyone to enjoy.",
+  "privacyTitle": "Privacy Policy",
+  "privacyContent": "Your privacy is important to us. This page explains how we collect and use your data.",
+  "termsTitle": "Terms of Service",
+  "termsContent": "By using this site, you agree to follow these rules and conditions."
+
 }
