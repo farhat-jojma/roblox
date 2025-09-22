@@ -1,7 +1,6 @@
 ---
 import Nav from "../components/Nav.astro";
 const { lang = "en", title = "Astro Basics", isHomePage = false } = Astro.props;
-const GA_ID = "G-83XZ260J4M"; // ✅ ton vrai ID Google Analytics
 ---
 
 <!doctype html>
@@ -17,12 +16,14 @@ const GA_ID = "G-83XZ260J4M"; // ✅ ton vrai ID Google Analytics
     <meta name="google-site-verification" content="aShb-9UGoTeILFt_eaaorlm6O9c_z_EhRIefm32jUPg" />
 
     <!-- ✅ Google Analytics -->
-    <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-83XZ260J4M"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', "{GA_ID}");
+
+      gtag('config', 'G-83XZ260J4M');
     </script>
   </head>
 
