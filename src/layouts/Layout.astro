@@ -1,27 +1,31 @@
 ---
 import Nav from "../components/Nav.astro";
 const { lang = "en", title = "Astro Basics", isHomePage = false } = Astro.props;
+const GA_ID = "G-83XZ260J4M"; // ✅ ton vrai ID Google Analytics
 ---
 
 <!doctype html>
 <html lang={lang}>
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width", initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
 
-    <!-- ✅ Google AdSense global script -->
-    <script
-      async
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXX"
-      crossorigin="anonymous"
-    ></script>
-
-    <!-- Google Search Console verification -->
+    <!-- ✅ Google Search Console -->
     <meta name="google-site-verification" content="aShb-9UGoTeILFt_eaaorlm6O9c_z_EhRIefm32jUPg" />
+
+    <!-- ✅ Google Analytics -->
+    <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', "{GA_ID}");
+    </script>
   </head>
+
   <body class={`bg-gray-50 text-gray-900 ${isHomePage ? 'home-page' : ''}`}>
     <!-- ✅ Navigation -->
     <Nav siteName="FreeCell Online" />
@@ -40,14 +44,14 @@ const { lang = "en", title = "Astro Basics", isHomePage = false } = Astro.props;
     width: 100%;
   }
   
-  /* Styles normaux pour toutes les pages */
+  /* Styles normaux */
   html,
   body {
     height: auto;
     overflow: auto;
   }
   
-  /* Styles spécifiques pour la page d'accueil */
+  /* Page d'accueil */
   body.home-page {
     height: 100vh;
     overflow: hidden;
