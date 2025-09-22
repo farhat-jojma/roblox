@@ -7,7 +7,7 @@ const { lang = "en", title = "Astro Basics", isHomePage = false } = Astro.props;
 <html lang={lang}>
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width", initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
@@ -18,6 +18,9 @@ const { lang = "en", title = "Astro Basics", isHomePage = false } = Astro.props;
       src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXX"
       crossorigin="anonymous"
     ></script>
+
+    <!-- Google Search Console verification -->
+    <meta name="google-site-verification" content="aShb-9UGoTeILFt_eaaorlm6O9c_z_EhRIefm32jUPg" />
   </head>
   <body class={`bg-gray-50 text-gray-900 ${isHomePage ? 'home-page' : ''}`}>
     <!-- ✅ Navigation -->
