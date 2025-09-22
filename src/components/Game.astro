@@ -2,7 +2,8 @@
 const { path = "/freecell/index.html" } = Astro.props;
 ---
 
-<div class="w-full max-w-5xl bg-gray-100 flex items-center justify-center border rounded-lg shadow-md mt-10 mx-auto relative">
+<div id="game-container" class="w-full max-w-5xl bg-gray-100 flex items-center justify-center border rounded-lg shadow-md mt-10 mx-auto relative">
+  <h1 id="freecell-title" class="sr-only">FreeCell Game</h1>
   <!-- Fullscreen Toggle Button -->
   <button
     id="fullscreen-btn"
@@ -10,13 +11,13 @@ const { path = "/freecell/index.html" } = Astro.props;
     aria-label="Toggle fullscreen"
     title="Toggle fullscreen"
   >
-    <!-- Expand Icon (SVG) -->
-    <svg id="expand-icon" class="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path>
+    <!-- Expand Icon (Enter Fullscreen) - Heroicons ArrowsPointingOut -->
+    <svg id="expand-icon" class="w-6 h-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9V4.5H8.25M20.25 9V4.5H15.75M3.75 15v4.5H8.25M20.25 15v4.5H15.75" />
     </svg>
-    <!-- Compress Icon (SVG) - Hidden initially -->
-    <svg id="compress-icon" class="w-5 h-5 text-gray-700 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 9V4.5M9 9H4.5M9 9L3.5 3.5m11 5.5V9m0-4.5H15m4.5 0L15 9M9 15v4.5M9 15H4.5M9 15l-5.5 5.5m11-5.5l5.5 5.5M15 15h4.5m-4.5 0V9"></path>
+    <!-- Compress Icon (Exit Fullscreen) - Heroicons ArrowsPointingIn -->
+    <svg id="compress-icon" class="w-6 h-6 text-gray-700 hidden" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M9 9L4.5 4.5M9 9H4.5M9 9V4.5M15 9l4.5-4.5M15 9h4.5M15 9V4.5M9 15l-4.5 4.5M9 15H4.5M9 15v4.5M15 15l4.5 4.5M15 15h4.5M15 15v4.5" />
     </svg>
   </button>
 
@@ -33,8 +34,15 @@ const { path = "/freecell/index.html" } = Astro.props;
 
 <script>
   class FullscreenManager {
+    gameContainer;
+    gameObject;
+    fullscreenBtn;
+    expandIcon;
+    compressIcon;
+    isFullscreen;
+
     constructor() {
-      this.gameContainer = document.querySelector('.w-full.max-w-5xl.bg-gray-100');
+      this.gameContainer = document.getElementById('game-container');
       this.gameObject = document.getElementById('game-object');
       this.fullscreenBtn = document.getElementById('fullscreen-btn');
       this.expandIcon = document.getElementById('expand-icon');
@@ -49,11 +57,11 @@ const { path = "/freecell/index.html" } = Astro.props;
         this.fullscreenBtn.addEventListener('click', () => this.toggleFullscreen());
       }
 
-      // Listen for fullscreen change events
+      // Listen for fullscreen change events (with vendor prefixes)
       document.addEventListener('fullscreenchange', () => this.handleFullscreenChange());
-      document.addEventListener('webkitfullscreenchange', () => this.handleFullscreenChange());
-      document.addEventListener('mozfullscreenchange', () => this.handleFullscreenChange());
-      document.addEventListener('MSFullscreenChange', () => this.handleFullscreenChange());
+      (document as any).addEventListener?.('webkitfullscreenchange', () => this.handleFullscreenChange());
+      (document as any).addEventListener?.('mozfullscreenchange', () => this.handleFullscreenChange());
+      (document as any).addEventListener?.('MSFullscreenChange', () => this.handleFullscreenChange());
     }
 
     toggleFullscreen() {
@@ -67,35 +75,44 @@ const { path = "/freecell/index.html" } = Astro.props;
     enterFullscreen() {
       const container = this.gameContainer;
 
+      if (!container) return;
+
       if (container.requestFullscreen) {
         container.requestFullscreen();
-      } else if (container.webkitRequestFullscreen) {
-        container.webkitRequestFullscreen();
-      } else if (container.mozRequestFullScreen) {
-        container.mozRequestFullScreen();
-      } else if (container.msRequestFullscreen) {
-        container.msRequestFullscreen();
+      } else {
+        const anyContainer = container as any;
+        if (anyContainer.webkitRequestFullscreen) {
+          anyContainer.webkitRequestFullscreen();
+        } else if (anyContainer.mozRequestFullScreen) {
+          anyContainer.mozRequestFullScreen();
+        } else if (anyContainer.msRequestFullscreen) {
+          anyContainer.msRequestFullscreen();
+        }
       }
     }
 
     exitFullscreen() {
       if (document.exitFullscreen) {
         document.exitFullscreen();
-      } else if (document.webkitExitFullscreen) {
-        document.webkitExitFullscreen();
-      } else if (document.mozCancelFullScreen) {
-        document.mozCancelFullScreen();
-      } else if (document.msExitFullscreen) {
-        document.msExitFullscreen();
+      } else {
+        const anyDoc = document as any;
+        if (anyDoc.webkitExitFullscreen) {
+          anyDoc.webkitExitFullscreen();
+        } else if (anyDoc.mozCancelFullScreen) {
+          anyDoc.mozCancelFullScreen();
+        } else if (anyDoc.msExitFullscreen) {
+          anyDoc.msExitFullscreen();
+        }
       }
     }
 
     handleFullscreenChange() {
+      const anyDoc = document as any;
       this.isFullscreen = !!(
         document.fullscreenElement ||
-        document.webkitFullscreenElement ||
-        document.mozFullScreenElement ||
-        document.msFullscreenElement
+        anyDoc.webkitFullscreenElement ||
+        anyDoc.mozFullScreenElement ||
+        anyDoc.msFullscreenElement
       );
 
       this.updateUI();
@@ -104,31 +121,31 @@ const { path = "/freecell/index.html" } = Astro.props;
 
     updateUI() {
       if (this.isFullscreen) {
-        this.expandIcon.classList.add('hidden');
-        this.compressIcon.classList.remove('hidden');
-        this.fullscreenBtn.setAttribute('title', 'Exit fullscreen');
-        this.fullscreenBtn.setAttribute('aria-label', 'Exit fullscreen');
+        this.expandIcon?.classList.add('hidden');
+        this.compressIcon?.classList.remove('hidden');
+        this.fullscreenBtn?.setAttribute('title', 'Exit fullscreen');
+        this.fullscreenBtn?.setAttribute('aria-label', 'Exit fullscreen');
       } else {
-        this.expandIcon.classList.remove('hidden');
-        this.compressIcon.classList.add('hidden');
-        this.fullscreenBtn.setAttribute('title', 'Enter fullscreen');
-        this.fullscreenBtn.setAttribute('aria-label', 'Enter fullscreen');
+        this.expandIcon?.classList.remove('hidden');
+        this.compressIcon?.classList.add('hidden');
+        this.fullscreenBtn?.setAttribute('title', 'Enter fullscreen');
+        this.fullscreenBtn?.setAttribute('aria-label', 'Enter fullscreen');
       }
     }
 
     updateGameSize() {
-      if (this.gameObject) {
+      if (this.gameObject && this.gameContainer) {
         if (this.isFullscreen) {
           // In fullscreen, make the game take full height
           this.gameObject.classList.remove('h-[80vh]');
           this.gameObject.classList.add('h-screen');
-          this.gameContainer.classList.remove('mt-10', 'rounded-lg');
+          this.gameContainer.classList.remove('mt-10', 'rounded-lg', 'max-w-5xl', 'mx-auto');
           this.gameContainer.classList.add('fixed', 'inset-0', 'z-50', 'bg-gray-100');
         } else {
           // Exit fullscreen, restore normal size
           this.gameObject.classList.remove('h-screen');
           this.gameObject.classList.add('h-[80vh]');
-          this.gameContainer.classList.add('mt-10', 'rounded-lg');
+          this.gameContainer.classList.add('mt-10', 'rounded-lg', 'max-w-5xl', 'mx-auto');
           this.gameContainer.classList.remove('fixed', 'inset-0', 'z-50', 'bg-gray-100');
         }
       }
