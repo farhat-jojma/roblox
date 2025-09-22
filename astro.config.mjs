@@ -1,9 +1,15 @@
 import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import cloudflare from "@astrojs/cloudflare";
+import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
-  integrations: [tailwind()],
+  site: "https://freecellio.com",
   output: "static",
-  adapter: cloudflare(), // ✅ bypass l’erreur
+  adapter: cloudflare(),
+
+  integrations: [
+    tailwind(),
+    sitemap(),
+  ],
 });
