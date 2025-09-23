@@ -1,4 +1,5 @@
 {
+  "siteName": "FreeCell en Ligne",
   "title": "Jouer à FreeCell en Ligne – Jeu de Cartes Gratuit | Sans Téléchargement",
   "description": "Profitez de FreeCell, le célèbre jeu de solitaire, directement dans votre navigateur. Jouez gratuitement, sans inscription ni téléchargement. Accessible sur mobile et ordinateur, sûr pour tous les âges.",
   "play": "Jouer maintenant",
@@ -28,18 +29,18 @@
   "aboutCard3Text": "Aucun téléchargement, aucun frais — il suffit de cliquer et jouer !",
   
   "privacyTitle": "Politique de Confidentialité",
-"privacyContent": "Votre confidentialité est essentielle pour nous. Cette page explique comment nous collectons et utilisons vos données personnelles.",
-"privacySubtitle": "Votre vie privée est importante. Découvrez comment nous protégeons et traitons vos informations personnelles.",
-"privacyCTA": "Nous respectons votre vie privée",
-"privacyCTAText": "Notre mission est de garantir une expérience de jeu sûre et transparente pour tous.",
-"privacyCTAButton": "Jouez à FreeCell en toute sécurité",
+  "privacyContent": "Votre confidentialité est essentielle pour nous. Cette page explique comment nous collectons et utilisons vos données personnelles.",
+  "privacySubtitle": "Votre vie privée est importante. Découvrez comment nous protégeons et traitons vos informations personnelles.",
+  "privacyCTA": "Nous respectons votre vie privée",
+  "privacyCTAText": "Notre mission est de garantir une expérience de jeu sûre et transparente pour tous.",
+  "privacyCTAButton": "Jouez à FreeCell en toute sécurité",
 
-"termsTitle": "Conditions d'Utilisation",
-"termsContent": "En utilisant ce site, vous acceptez de respecter nos règles et conditions.",
-"termsSubtitle": "Veuillez lire attentivement nos conditions pour comprendre vos droits et responsabilités lors de l’utilisation de nos services.",
-"termsCTA": "En jouant, vous acceptez nos conditions",
-"termsCTAText": "Nous nous engageons à offrir une expérience équitable, transparente et agréable à tous nos joueurs.",
-"termsCTAButton": "Jouez à FreeCell maintenant"
+  "termsTitle": "Conditions d'Utilisation",
+  "termsContent": "En utilisant ce site, vous acceptez de respecter nos règles et conditions.",
+  "termsSubtitle": "Veuillez lire attentivement nos conditions pour comprendre vos droits et responsabilités lors de l’utilisation de nos services.",
+  "termsCTA": "En jouant, vous acceptez nos conditions",
+  "termsCTAText": "Nous nous engageons à offrir une expérience équitable, transparente et agréable à tous nos joueurs.",
+  "termsCTAButton": "Jouez à FreeCell maintenant"
 
 
 }
