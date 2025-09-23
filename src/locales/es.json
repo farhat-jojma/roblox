@@ -17,11 +17,29 @@
     "privacy": "Política de Privacidad",
     "terms": "Términos de Servicio"
   },
-  "aboutTitle": "Acerca de nosotros",
-  "aboutContent": "¡Bienvenido a nuestro sitio! Ofrecemos los mejores juegos en línea gratuitos para que todos disfruten.",
+  "aboutTitle": "Sobre nosotros",
+  "aboutContent": "¡Bienvenido a nuestro sitio! Ofrecemos los mejores juegos gratuitos en línea para que todos puedan divertirse.",
+  "aboutSubtitle": "Descubre más sobre FreeCell y nuestra misión de ofrecer juegos en línea divertidos, seguros y gratuitos para todos.",
+  "aboutCard1Title": "Divertido y Atractivo",
+  "aboutCard1Text": "Disfruta de una experiencia entretenida, relajante y desafiante.",
+  "aboutCard2Title": "Seguro para Todos",
+  "aboutCard2Text": "Juega en un entorno protegido y apto para niños.",
+  "aboutCard3Title": "Siempre Gratis",
+  "aboutCard3Text": "Sin descargas, sin costes — ¡solo haz clic y juega!",
+  
   "privacyTitle": "Política de Privacidad",
-  "privacyContent": "Tu privacidad es importante para nosotros. Esta página explica cómo recopilamos y usamos tus datos.",
-  "termsTitle": "Términos de Servicio",
-  "termsContent": "Al usar este sitio, aceptas cumplir con estas reglas y condiciones."
+"privacyContent": "Tu privacidad es fundamental para nosotros. Esta página explica cómo recopilamos y utilizamos tus datos personales.",
+"privacySubtitle": "Tu privacidad es importante. Descubre cómo protegemos y gestionamos tu información personal.",
+"privacyCTA": "Respetamos tu privacidad",
+"privacyCTAText": "Nuestra misión es ofrecer una experiencia de juego segura y transparente para todos.",
+"privacyCTAButton": "Juega FreeCell de forma segura",
+
+"termsTitle": "Términos de Servicio",
+"termsContent": "Al utilizar este sitio, aceptas cumplir con nuestras normas y condiciones.",
+"termsSubtitle": "Lee atentamente nuestros términos para comprender tus derechos y responsabilidades al usar nuestros servicios.",
+"termsCTA": "Al jugar, aceptas nuestros términos",
+"termsCTAText": "Nos comprometemos a brindar una experiencia justa, transparente y divertida para todos nuestros jugadores.",
+"termsCTAButton": "Juega FreeCell ahora"
+
 
 }

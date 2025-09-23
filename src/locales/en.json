@@ -19,8 +19,25 @@
   },
   "aboutTitle": "About Us",
   "aboutContent": "Welcome to our site! We provide the best free online games for everyone to enjoy.",
+  "aboutSubtitle": "Discover more about FreeCell and our mission to provide fun, safe, and free online gaming for everyone.",
+  "aboutCard1Title": "Fun & Engaging",
+  "aboutCard1Text": "Enjoy a fun, relaxing, and challenging experience.",
+  "aboutCard2Title": "Safe for Everyone",
+  "aboutCard2Text": "Play in a secure and kid-friendly environment.",
+  "aboutCard3Title": "Always Free",
+  "aboutCard3Text": "No downloads, no fees—just click and play!",
+
   "privacyTitle": "Privacy Policy",
   "privacyContent": "Your privacy is important to us. This page explains how we collect and use your data.",
+  "privacySubtitle": "Your privacy is important to us. Learn how we protect and handle your personal data.",
+  "privacyCTA": "We respect your privacy",
+  "privacyCTAText" : "Our mission is to provide a safe and transparent gaming experience for everyone.",
+  "privacyCTAButton": "Play FreeCell Safely",
+
   "termsTitle": "Terms of Service",
-  "termsContent": "By using this site, you agree to follow these rules and conditions."
+  "termsContent": "By using this site, you agree to follow these rules and conditions.",
+  "termsSubtitle": "Please read our terms carefully to understand your rights and responsibilities while using our services.",
+  "termsCTA": "By playing, you agree to our terms",
+  "termsCTAText": "We are committed to providing a fair, transparent, and enjoyable experience for all our players.",
+  "termsCTAButton": "Play FreeCell Now"
 }

@@ -18,10 +18,28 @@
     "terms": "Conditions de Service"
   },
   "aboutTitle": "À propos de nous",
-  "aboutContent": "Bienvenue sur notre site ! Nous offrons les meilleurs jeux en ligne gratuits pour tous.",
-  "privacyTitle": "Politique de confidentialité",
-  "privacyContent": "Votre vie privée est importante pour nous. Cette page explique comment nous collectons et utilisons vos données.",
-  "termsTitle": "Conditions d'utilisation",
-  "termsContent": "En utilisant ce site, vous acceptez de suivre ces règles et conditions."
+  "aboutContent": "Bienvenue sur notre site ! Nous proposons les meilleurs jeux gratuits en ligne pour que tout le monde puisse s’amuser.",
+  "aboutSubtitle": "Découvrez-en plus sur FreeCell et notre mission : offrir des jeux en ligne amusants, sûrs et gratuits pour tous.",
+  "aboutCard1Title": "Amusant & Captivant",
+  "aboutCard1Text": "Profitez d'une expérience divertissante, relaxante et stimulante.",
+  "aboutCard2Title": "Sécurisé pour Tous",
+  "aboutCard2Text": "Jouez dans un environnement sûr et adapté aux enfants.",
+  "aboutCard3Title": "Toujours Gratuit",
+  "aboutCard3Text": "Aucun téléchargement, aucun frais — il suffit de cliquer et jouer !",
+  
+  "privacyTitle": "Politique de Confidentialité",
+"privacyContent": "Votre confidentialité est essentielle pour nous. Cette page explique comment nous collectons et utilisons vos données personnelles.",
+"privacySubtitle": "Votre vie privée est importante. Découvrez comment nous protégeons et traitons vos informations personnelles.",
+"privacyCTA": "Nous respectons votre vie privée",
+"privacyCTAText": "Notre mission est de garantir une expérience de jeu sûre et transparente pour tous.",
+"privacyCTAButton": "Jouez à FreeCell en toute sécurité",
+
+"termsTitle": "Conditions d'Utilisation",
+"termsContent": "En utilisant ce site, vous acceptez de respecter nos règles et conditions.",
+"termsSubtitle": "Veuillez lire attentivement nos conditions pour comprendre vos droits et responsabilités lors de l’utilisation de nos services.",
+"termsCTA": "En jouant, vous acceptez nos conditions",
+"termsCTAText": "Nous nous engageons à offrir une expérience équitable, transparente et agréable à tous nos joueurs.",
+"termsCTAButton": "Jouez à FreeCell maintenant"
+
 
 }
