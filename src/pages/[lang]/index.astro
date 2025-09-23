@@ -22,11 +22,21 @@ const locale = resolveLang(Astro.params.lang);
 const dict = await import(`../../locales/${locale}.json`).then((m) => m.default);
 ---
 
-<Layout lang={locale} title={dict.title} isHomePage={true}>
+<Layout lang={locale} title={dict.title} description={dict.description} isHomePage={true}>
   <div class="flex bg-white h-full">
     <main class="flex-1 flex flex-col items-center justify-center px-4">
       <div class="w-full max-w-6xl">
         <Game path="/freecell/index.html" />
+        <Hero />
+        <OtherGames />
+        <HowToPlay />
+        <Controls />
+        <Tips />
+        <Features />
+        <Unblocked />
+        <Online />
+        <Faq />
+        <Platform />
       </div>
     </main>
   </div>
