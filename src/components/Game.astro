@@ -21,21 +21,25 @@ const { path } = Astro.props;
     </svg>
   </button>
 
-  <object
-    id="game-object"
-    type="text/html"
-    data={path}
+  <iframe
+    id="game-frame"
+    src={path}
     title="Pixel Drawing Game"
     aria-label="Embedded Pixel Drawing game"
     aria-labelledby="pixel-drawing-title"
     class="w-full h-[80vh] rounded-lg transition-all duration-300"
-  ></object>
+    allow="fullscreen; autoplay; gamepad; encrypted-media; clipboard-write"
+    allowfullscreen
+    webkitallowfullscreen
+    mozallowfullscreen
+    referrerpolicy="no-referrer"
+  ></iframe>
 </div>
 
 <script>
   class FullscreenManager {
     gameContainer;
-    gameObject;
+    gameFrame;
     fullscreenBtn;
     expandIcon;
     compressIcon;
@@ -43,7 +47,7 @@ const { path } = Astro.props;
 
     constructor() {
       this.gameContainer = document.getElementById('game-container');
-      this.gameObject = document.getElementById('game-object');
+      this.gameFrame = document.getElementById('game-frame');
       this.fullscreenBtn = document.getElementById('fullscreen-btn');
       this.expandIcon = document.getElementById('expand-icon');
       this.compressIcon = document.getElementById('compress-icon');
@@ -134,17 +138,17 @@ const { path } = Astro.props;
     }
 
     updateGameSize() {
-      if (this.gameObject && this.gameContainer) {
+      if (this.gameFrame && this.gameContainer) {
         if (this.isFullscreen) {
           // In fullscreen, make the game take full height
-          this.gameObject.classList.remove('h-[80vh]');
-          this.gameObject.classList.add('h-screen');
+          this.gameFrame.classList.remove('h-[80vh]');
+          this.gameFrame.classList.add('h-screen');
           this.gameContainer.classList.remove('mt-10', 'rounded-lg', 'max-w-5xl', 'mx-auto');
           this.gameContainer.classList.add('fixed', 'inset-0', 'z-50', 'bg-gray-100');
         } else {
           // Exit fullscreen, restore normal size
-          this.gameObject.classList.remove('h-screen');
-          this.gameObject.classList.add('h-[80vh]');
+          this.gameFrame.classList.remove('h-screen');
+          this.gameFrame.classList.add('h-[80vh]');
           this.gameContainer.classList.add('mt-10', 'rounded-lg', 'max-w-5xl', 'mx-auto');
           this.gameContainer.classList.remove('fixed', 'inset-0', 'z-50', 'bg-gray-100');
         }
