@@ -4,3 +4,65 @@ body {
   padding-top: 56px; /* hauteur de la nav */
   /* Supprimé les restrictions de height et overflow qui affectaient toutes les pages */
 }
+
+/* Pixel font fallback (consider adding actual font via link in layout if desired) */
+.pixel-font { font-family: 'Press Start 2P', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+
+/* --- Shared Pixel Utilities --- */
+.pixel-bg {
+  background-image:
+    linear-gradient(#2b2b2b22 1px, transparent 1px),
+    linear-gradient(90deg, #2b2b2b22 1px, transparent 1px);
+  background-size: 16px 16px, 16px 16px;
+  background-position: 0 0, 0 0;
+  image-rendering: pixelated;
+}
+
+.pixel-panel {
+  background: #fffef4;
+  box-shadow: 0 0 0 4px #2b2b2b inset, 0 8px 0 #2b2b2b;
+}
+
+.pixel-heading { font-family: inherit; }
+.pixel-heading .text { font-family: 'Press Start 2P', ui-monospace, monospace; }
+
+.pixel-cta {
+  display: inline-block; background: #ffd93d; color: #2b2b2b; text-decoration: none;
+  box-shadow: 0 0 0 3px #2b2b2b inset, 0 6px 0 #2b2b2b; padding: 12px 16px;
+}
+.pixel-cta:hover { filter: brightness(0.98); }
+.pixel-cta:active { transform: translateY(1px); box-shadow: 0 0 0 3px #2b2b2b inset, 0 5px 0 #2b2b2b; }
+
+/* --- Pixel Visual Elements --- */
+.pixel-divider { height: 8px; background: repeating-linear-gradient(90deg, #2b2b2b, #2b2b2b 8px, #ffd93d 8px, #ffd93d 16px); }
+
+.pixel-badge { display: inline-block; background: #ff3d6e; color: #fffef4; padding: 6px 10px; font-weight: 700; box-shadow: 0 0 0 3px #2b2b2b inset, 0 6px 0 #2b2b2b; }
+
+.pixel-icon { width: 20px; height: 20px; display: inline-block; image-rendering: pixelated; background: #2b2b2b; box-shadow: 0 0 0 3px #2b2b2b inset, 0 0 0 6px #ffd93d inset; }
+.pixel-icon.green { box-shadow: 0 0 0 3px #2b2b2b inset, 0 0 0 6px #32CD32 inset; }
+.pixel-icon.blue { box-shadow: 0 0 0 3px #2b2b2b inset, 0 0 0 6px #00CFFF inset; }
+
+.pixel-sprite {
+  width: 24px; height: 24px; display: inline-block; position: relative; background: #2b2b2b;
+  box-shadow: 0 0 0 3px #2b2b2b inset, 0 0 0 6px #ffd93d inset, 0 0 0 9px #ff3d6e inset;
+}
+.pixel-sprite.star {
+  box-shadow: 0 0 0 3px #2b2b2b inset, 0 0 0 6px #ffd93d inset, 0 0 0 9px #2b2b2b inset;
+}
+
+/* Hero art container */
+.pixel-hero-art { display: inline-block; margin-top: 12px; }
+.pixel-hero-art svg { image-rendering: pixelated; shape-rendering: crispEdges; }
+
+/* --- Animations --- */
+@keyframes floatPixel { 0% { transform: translateY(0); } 50% { transform: translateY(-6px); } 100% { transform: translateY(0); } }
+@keyframes bobPixel { 0% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-4px) rotate(1deg); } 100% { transform: translateY(0) rotate(0deg); } }
+
+.pixel-float { animation: floatPixel 3s ease-in-out infinite; }
+.pixel-bob { animation: bobPixel 2.6s ease-in-out infinite; }
+
+.pixel-shadow-hover { transition: transform .15s ease, box-shadow .15s ease, filter .15s ease; }
+.pixel-shadow-hover:hover { transform: translateY(-2px); filter: brightness(1.01); }
+
+.pixel-panel.hoverable { cursor: pointer; }
+.pixel-panel.hoverable:hover { box-shadow: 0 0 0 4px #2b2b2b inset, 0 10px 0 #2b2b2b; }

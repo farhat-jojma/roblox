@@ -12,94 +12,86 @@ const dict = await import(`../../locales/${locale}.json`).then((m) => m.default)
 ---
 
 <Layout lang={locale} title={dict.aboutTitle}>
-  <!-- Hero Section -->
-  <section class="relative bg-gradient-to-r from-teal-800 to-cyan-800 text-white py-20 overflow-hidden">
-    <div class="absolute inset-0 bg-[url('/bg-pattern.svg')] opacity-10"></div>
+  <!-- Pixel Hero -->
+  <section class="relative bg-gradient-to-r from-pink-600 via-yellow-400 to-cyan-500 text-white py-16 overflow-hidden">
+    <!-- Animated pixel grid overlay -->
+    <div class="absolute inset-0 bg-[url('/pixel-grid.png')] opacity-30 animate-pulse"></div>
+  
     <div class="relative max-w-5xl mx-auto px-6 text-center">
-      <!-- <img src="/favicon.svg" alt="FreeCell logo" class="w-28 h-28 mx-auto mb-8 drop-shadow-xl" /> -->
-      <h1 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight">
+      <!-- Rainbow-glow Title -->
+      <h1 class="text-4xl md:text-6xl font-black pixel-font mb-6 bg-gradient-to-r from-pink-400 via-yellow-300 to-cyan-400 bg-clip-text text-transparent drop-shadow-[0_0_10px_#ff8aff]">
         {dict.aboutTitle}
       </h1>
-      <p class="text-lg md:text-xl opacity-90 max-w-3xl mx-auto leading-relaxed">
-        {dict.aboutSubtitle || "Discover more about FreeCell and our mission to provide fun, safe, and free online gaming for everyone."}
+      <p class="text-lg md:text-xl text-gray-100 max-w-3xl mx-auto leading-relaxed">
+        {dict.aboutSubtitle}
       </p>
-    </div>
-  </section>
-
-  <!-- Main Content Section -->
-  <section class="relative max-w-6xl mx-auto px-6 py-24">
-  <!-- Decorative background -->
-  <div class="absolute inset-0 bg-gradient-to-r from-teal-100 via-cyan-50 to-teal-100 opacity-60 rounded-[3rem] blur-3xl"></div>
   
-  <!-- Content Wrapper -->
-  <div class="relative bg-white/90 backdrop-blur-sm border border-gray-100 rounded-3xl shadow-2xl p-10 md:p-16 hover:shadow-[0_0_40px_rgba(0,0,0,0.1)] transition duration-500">
-    <div class="prose prose-lg prose-gray mx-auto leading-relaxed">
-      <HtmlContent slug="about" locale={locale} fallbackText="About page not available." />
+      <!-- Pixel badges -->
+      <div class="mt-10 flex justify-center gap-3 flex-wrap">
+        <span class="pixel-badge bg-pink-500 text-white">🎨 {dict.pixel} </span>
+        <span class="pixel-badge bg-yellow-400 text-black">🕹 {dict.retro}</span>
+        <span class="pixel-badge bg-cyan-500 text-white">⭐ {dict.creativity}</span>
+        <span class="pixel-badge bg-green-500 text-white">💡 {dict.inspiration}</span>
+        <span class="pixel-badge bg-purple-500 text-white">🎶 {dict.fun}</span>
+      </div>
+  
+      <!-- Floating pixel art -->
+      <div class="pixel-hero-art mt-10 animate-bounce-slow" aria-hidden="true">
+        <svg width="240" height="110" viewBox="0 0 240 110">
+          <rect x="10"  y="25" width="20" height="20" fill="#ff3d6e" stroke="#111" stroke-width="4"/>
+          <rect x="40"  y="12" width="18" height="18" fill="#ffd93d" stroke="#111" stroke-width="4"/>
+          <rect x="70"  y="38" width="22" height="22" fill="#00CFFF" stroke="#111" stroke-width="4"/>
+          <rect x="110" y="18" width="16" height="16" fill="#32CD32" stroke="#111" stroke-width="4"/>
+          <rect x="140" y="30" width="24" height="24" fill="#fffef4" stroke="#111" stroke-width="4"/>
+          <rect x="170" y="10" width="18" height="18" fill="#9b5de5" stroke="#111" stroke-width="4"/>
+          <rect x="200" y="28" width="22" height="22" fill="#ff8500" stroke="#111" stroke-width="4"/>
+        </svg>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+  
 
-
-  <!-- Highlight Section -->
-  <section class="bg-gradient-to-br from-gray-50 to-gray-100 py-20">
-    <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
-      
-      <!-- Card 1 -->
-      <div class="relative group">
-        <div class="absolute inset-0 rounded-2xl bg-gradient-to-r from-teal-400 to-cyan-500 opacity-70 blur-xl group-hover:opacity-90 transition duration-500"></div>
-        <div class="relative bg-white rounded-2xl shadow-lg p-10 hover:-translate-y-2 transition duration-300">
-          <span class="block text-5xl font-extrabold text-teal-500 mb-4">01</span>
-          <h3 class="text-2xl font-bold text-gray-800 mb-4">
-            {dict.aboutCard1Title || "Fun & Engaging"}
-          </h3>
-          <p class="text-gray-600 leading-relaxed">
-            {dict.aboutCard1Text || "Enjoy a fun, relaxing, and challenging experience."}
-          </p>
-        </div>
+  <!-- Pixel Panel About -->
+  <section class="relative max-w-5xl mx-auto px-6 py-14">
+    <div class="pixel-panel p-6 md:p-10 border-4 border-cyan-400 shadow-[4px_4px_0px_#00fff7] bg-white">
+      <div class="prose prose-gray mx-auto leading-relaxed">
+        <HtmlContent slug="about" locale={locale} fallbackText="About page not available." />
       </div>
-
-      <!-- Card 2 -->
-      <div class="relative group">
-        <div class="absolute inset-0 rounded-2xl bg-gradient-to-r from-indigo-400 to-purple-500 opacity-70 blur-xl group-hover:opacity-90 transition duration-500"></div>
-        <div class="relative bg-white rounded-2xl shadow-lg p-10 hover:-translate-y-2 transition duration-300">
-          <span class="block text-5xl font-extrabold text-indigo-500 mb-4">02</span>
-          <h3 class="text-2xl font-bold text-gray-800 mb-4">
-            {dict.aboutCard2Title || "Safe for Everyone"}
-          </h3>
-          <p class="text-gray-600 leading-relaxed">
-            {dict.aboutCard2Text || "Play in a secure and kid-friendly environment."}
-          </p>
-        </div>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="relative group">
-        <div class="absolute inset-0 rounded-2xl bg-gradient-to-r from-pink-400 to-orange-500 opacity-70 blur-xl group-hover:opacity-90 transition duration-500"></div>
-        <div class="relative bg-white rounded-2xl shadow-lg p-10 hover:-translate-y-2 transition duration-300">
-          <span class="block text-5xl font-extrabold text-pink-500 mb-4">03</span>
-          <h3 class="text-2xl font-bold text-gray-800 mb-4">
-            {dict.aboutCard3Title || "Always Free"}
-          </h3>
-          <p class="text-gray-600 leading-relaxed">
-            {dict.aboutCard3Text || "No downloads, no fees—just click and play!"}
-          </p>
-        </div>
-      </div>
-
     </div>
   </section>
 
-  <!-- Call to Action -->
-  <section class="bg-gradient-to-r from-teal-800 to-cyan-800 py-20 text-center text-white">
-    <div class="max-w-4xl mx-auto px-6">
-      <h2 class="text-3xl md:text-4xl font-extrabold mb-6">
-        {dict.aboutCTA || "Ready to start playing FreeCell?"}
+  <!-- Pixel Feature Grid -->
+  <section class="py-14 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+      <div class="pixel-panel p-8 pixel-shadow-hover hoverable border-4 border-pink-500">
+        <span class="block text-2xl font-black pixel-font mb-4">01</span>
+        <h3 class="text-xl font-bold mb-3">{dict.aboutCard1Title}</h3>
+        <p class="text-gray-700">{dict.aboutCard1Text}</p>
+      </div>
+      <div class="pixel-panel p-8 pixel-shadow-hover hoverable border-4 border-yellow-400">
+        <span class="block text-2xl font-black pixel-font mb-4">02</span>
+        <h3 class="text-xl font-bold mb-3">{dict.aboutCard2Title}</h3>
+        <p class="text-gray-700">{dict.aboutCard2Text}</p>
+      </div>
+      <div class="pixel-panel p-8 pixel-shadow-hover hoverable border-4 border-cyan-400">
+        <span class="block text-2xl font-black pixel-font mb-4">03</span>
+        <h3 class="text-xl font-bold mb-3">{dict.aboutCard3Title}</h3>
+        <p class="text-gray-700">{dict.aboutCard3Text}</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="pixel-divider my-12"></div>
+
+  <!-- Pixel CTA -->
+  <section class="py-16 text-center bg-black text-white">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-black pixel-font drop-shadow-[0_0_6px_#ff3d6e] mb-5">
+        {dict.aboutCTA}
       </h2>
-      <p class="text-lg opacity-90 mb-8">
-        {dict.aboutCTAText || "Jump into the game now and enjoy endless hours of fun—completely free."}
-      </p>
-      <a href="/{locale}/play" class="inline-block bg-white text-teal-700 font-semibold px-8 py-4 rounded-xl shadow-md hover:bg-gray-100 transition">
-        {dict.aboutCTAButton || "Play FreeCell Now"}
+      <p class="text-base md:text-lg text-gray-200 mb-6">{dict.aboutCTAText}</p>
+      <a href={`/${locale}/play`} class="pixel-cta bg-pink-500 hover:bg-pink-600 text-white px-6 py-3 rounded-lg font-bold">
+        {dict.aboutCTAButton}
       </a>
     </div>
   </section>

@@ -1,9 +1,9 @@
 ---
-const { path = "/freecell/index.html" } = Astro.props;
+const { path } = Astro.props;
 ---
 
 <div id="game-container" class="w-full max-w-5xl bg-gray-100 flex items-center justify-center border rounded-lg shadow-md mt-10 mx-auto relative">
-  <h1 id="freecell-title" class="sr-only">FreeCell Game</h1>
+  <h1 id="pixel-drawing-title" class="sr-only">Pixel Drawing Game</h1>
   <!-- Fullscreen Toggle Button -->
   <button
     id="fullscreen-btn"
@@ -25,9 +25,9 @@ const { path = "/freecell/index.html" } = Astro.props;
     id="game-object"
     type="text/html"
     data={path}
-    title="FreeCell Game"
-    aria-label="Embedded FreeCell game"
-    aria-labelledby="freecell-title"
+    title="Pixel Drawing Game"
+    aria-label="Embedded Pixel Drawing game"
+    aria-labelledby="pixel-drawing-title"
     class="w-full h-[80vh] rounded-lg transition-all duration-300"
   ></object>
 </div>

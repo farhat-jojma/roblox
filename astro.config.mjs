@@ -4,7 +4,7 @@ import cloudflare from "@astrojs/cloudflare";
 import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
-  site: "https://freecellio.com",
+  site: "https://drawinggamesonline.com",
   output: "static",
   adapter: cloudflare(),
 

@@ -1,6 +1,6 @@
 ---
 import type { GetStaticPaths } from "astro";
-const { siteName = "FreeCell Online" } = Astro.props;
+const { siteName = "Pixel Drawing Online" } = Astro.props;
 import { getLangStaticPaths, resolveLang } from "../lib/i18n";
 
 export async function getStaticPaths() {
@@ -12,30 +12,28 @@ const dict = await import(`../locales/${locale}.json`).then((m) => m.default);
 const navDict = dict?.nav || {};
 ---
 
-<nav class="w-full fixed top-0 left-0 z-50 bg-[#12494c] flex items-center justify-between text-white px-6 py-4 shadow-lg" lang={locale}>
-  <!-- Logo -->
-  <a href={`/${locale}/`} class="flex items-center gap-2">
-    <img src="/favicon.svg" alt={`${siteName} logo`} class="w-10 h-8" />
-    <span class="text-lg font-bold text-white">{dict.siteName}</span>
+<nav class="w-full fixed top-0 left-0 z-50 pixel-nav flex items-center justify-between text-[#2b2b2b] px-4 py-3" lang={locale}>
+  <!-- Pixel logo/title -->
+  <a href={`/${locale}/`} class="flex items-center gap-3 group">
+    <span class="pixel-logo" aria-hidden="true"></span>
+    <span class="text-xl font-black pixel-font group-hover:drop-shadow-pixel">{dict.siteName}</span>
   </a>
-  
-  <!-- Hamburger -->
+
+  <!-- Pixel hamburger -->
   <button id="hamburger-btn" 
-          class="flex flex-col justify-center items-center w-8 h-8 space-y-1 focus:outline-none transition-transform duration-300"
+          class="pixel-button focus:outline-none"
           aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-dropdown">
-    <span class="block w-6 h-0.5 bg-white rounded"></span>
-    <span class="block w-6 h-0.5 bg-white rounded"></span>
-    <span class="block w-6 h-0.5 bg-white rounded"></span>
+    <span class="pixel-bars" aria-hidden="true"></span>
   </button>
   
-  <!-- Dropdown -->
+  <!-- Pixel dropdown -->
   <ul id="nav-dropdown" 
-      class="hidden absolute top-full right-6 mt-4 w-56 bg-white text-gray-800 rounded-xl shadow-2xl overflow-hidden transform opacity-0 scale-95 transition-all duration-300 ease-out"
+      class="hidden absolute top-full right-4 mt-3 pixel-card w-60 text-sm transform opacity-0 scale-95 transition-all duration-200 ease-out"
       role="menu" aria-labelledby="hamburger-btn">
-    <li><a href={`/${locale}/`} class="block px-5 py-3 hover:bg-gradient-to-r hover:from-[#12494c] hover:to-[#4db6ac] hover:text-white transition-colors" role="menuitem">{navDict.home || "Home"}</a></li>
-    <li class="border-t border-gray-200"><a href={`/${locale}/about/`} class="block px-5 py-3 hover:bg-gradient-to-r hover:from-[#12494c] hover:to-[#4db6ac] hover:text-white transition-colors" role="menuitem">{navDict.about || "About"}</a></li>
-    <li class="border-t border-gray-200"><a href={`/${locale}/privacy-policy/`} class="block px-5 py-3 hover:bg-gradient-to-r hover:from-[#12494c] hover:to-[#4db6ac] hover:text-white transition-colors" role="menuitem">{navDict.privacy || "Privacy Policy"}</a></li>
-    <li class="border-t border-gray-200"><a href={`/${locale}/terms-of-service/`} class="block px-5 py-3 hover:bg-gradient-to-r hover:from-[#12494c] hover:to-[#4db6ac] hover:text-white transition-colors" role="menuitem">{navDict.terms || "Terms of Service"}</a></li>
+    <li><a href={`/${locale}/`} class="pixel-item" role="menuitem">{navDict.home || "Home"}</a></li>
+    <li class="pixel-sep"><a href={`/${locale}/about/`} class="pixel-item" role="menuitem">{navDict.about || "About"}</a></li>
+    <li class="pixel-sep"><a href={`/${locale}/privacy-policy/`} class="pixel-item" role="menuitem">{navDict.privacy || "Privacy Policy"}</a></li>
+    <li class="pixel-sep"><a href={`/${locale}/terms-of-service/`} class="pixel-item" role="menuitem">{navDict.terms || "Terms of Service"}</a></li>
   </ul>
 </nav>
 
@@ -76,7 +74,45 @@ const navDict = dict?.nav || {};
 </script>
 
 <style>
-  body {
-    padding-top: 56px; /* évite que le contenu passe sous la nav */
+  body { padding-top: 56px; }
+
+  /* --- Pixel nav theme --- */
+  .pixel-nav {
+    background: #ffda3e;
+    image-rendering: pixelated;
+    box-shadow: 0 0 0 4px #2b2b2b inset, 0 6px 0 #2b2b2b;
   }
+
+  .pixel-font { font-family: 'Press Start 2P', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+
+  .pixel-logo {
+    width: 28px; height: 28px; position: relative; display: inline-block;
+    background: #2b2b2b;
+    box-shadow:
+      0 0 0 4px #2b2b2b inset,
+      0 0 0 8px #ff3d6e inset,
+      0 0 0 12px #ffd93d inset;
+  }
+
+  .pixel-button {
+    width: 40px; height: 32px; display: grid; place-items: center; background: #ffd93d; color: #2b2b2b;
+    box-shadow: 0 0 0 3px #2b2b2b inset, 0 3px 0 #2b2b2b; border: none; cursor: pointer;
+  }
+  .pixel-button:active { transform: translateY(1px); box-shadow: 0 0 0 3px #2b2b2b inset, 0 2px 0 #2b2b2b; }
+
+  .pixel-bars { position: relative; width: 18px; height: 2px; background: #2b2b2b; display: inline-block; }
+  .pixel-bars::before, .pixel-bars::after { content: ""; position: absolute; left: 0; width: 18px; height: 2px; background: #2b2b2b; }
+  .pixel-bars::before { top: -6px; }
+  .pixel-bars::after { top: 6px; }
+
+  .pixel-card {
+    background: #fffef4;
+    border: 0; box-shadow: 0 0 0 3px #2b2b2b inset, 0 6px 0 #2b2b2b;
+    padding: 6px;
+  }
+  .pixel-item { display: block; padding: 10px 12px; color: #2b2b2b; text-decoration: none; }
+  .pixel-item:hover { background: #ffd93d; }
+  .pixel-sep { border-top: 2px solid #2b2b2b22; }
+
+  .drop-shadow-pixel { filter: drop-shadow(2px 0 0 #2b2b2b) drop-shadow(-2px 0 0 #2b2b2b) drop-shadow(0 2px 0 #2b2b2b) drop-shadow(0 -2px 0 #2b2b2b); }
 </style>
