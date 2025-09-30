@@ -1,6 +1,55 @@
-<section class="w-full bg-gray-50 py-16" hidden>
-<h2>Features of Pixel Drawing</h2>
-<p>Dive straight into pixel-perfect fun without needing to download anything—just open your favorite browser and start creating! Pixel Drawing welcomes young artists with bright, blocky graphics that remind you of classic video games. Friendly pixel pals pop up to cheer you on as you create. Our easy tap-and-drag controls make it simple for little hands to fill in colors and shape each masterpiece.</p>
-<p>As you progress through the levels, you'll discover new color palettes filled with unexpected shades. You'll also meet playful mascots who make each stage even more exciting. Quick-time challenges help sharpen your timing skills, and imaginative puzzles spark fresh ideas every step of the way. Lively sound effects celebrate every success and keep the energy high. With its simple mechanics, endless levels, and surprise rewards around every corner, Pixel Drawing turns simple doodles into pixel art adventures that kids will love playing again and again.</p>
+<section id="features" class="relative w-full py-16 sm:py-20 overflow-hidden bg-rose-50">
+  <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
+    <div>
+      <div class="inline-block px-3 py-1 mb-4 bg-white/90 border-2 border-black shadow-[4px_4px_0_#000]">
+        <span class="text-xs tracking-widest uppercase">Features</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold mb-4 pixel-title">Built for playful creation</h2>
+      <p class="text-gray-700 mb-6">Everything is tuned for pixel art: sharp grids, bold palettes, and tools that make retro design feel modern.</p>
 
+      <ul class="space-y-3">
+        <li class="flex gap-3 items-start"><span class="inline-block mt-1 w-3 h-3 bg-emerald-400 border-2 border-black"></span><span><strong>Instant start:</strong> open in browser and draw—no setup.</span></li>
+        <li class="flex gap-3 items-start"><span class="inline-block mt-1 w-3 h-3 bg-fuchsia-500 border-2 border-black"></span><span><strong>Smart grid:</strong> snap, mirror and fill keep lines crisp.</span></li>
+        <li class="flex gap-3 items-start"><span class="inline-block mt-1 w-3 h-3 bg-amber-300 border-2 border-black"></span><span><strong>Share fast:</strong> export PNGs with a retro frame.</span></li>
+      </ul>
+
+      <div class="mt-8 flex items-center gap-3">
+        <a href="#game" class="px-5 py-3 bg-yellow-300 hover:bg-yellow-400 transition-colors border-2 border-black shadow-[4px_4px_0_#000] font-semibold">Try the features</a>
+        <a href="#tips" class="px-5 py-3 bg-white hover:bg-gray-100 transition-colors border-2 border-black shadow-[4px_4px_0_#000] font-semibold">Pro tips</a>
+      </div>
+    </div>
+
+    <div class="relative">
+      <div class="mosaic">
+        <span class="sq bg-pink-500" style="grid-area:a"></span>
+        <span class="sq bg-yellow-400" style="grid-area:b"></span>
+        <span class="sq bg-blue-500" style="grid-area:c"></span>
+        <span class="sq bg-emerald-500" style="grid-area:d"></span>
+        <span class="sq bg-purple-500" style="grid-area:e"></span>
+        <span class="sq bg-cyan-500" style="grid-area:f"></span>
+      </div>
+      <div class="absolute inset-0 pointer-events-none">
+        <span class="pix-star" style="top:10%;left:8%"></span>
+        <span class="pix-star" style="bottom:12%;right:10%"></span>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .pixel-title { text-shadow: 0 0 0 #000, 2px 2px 0 #000, -2px 2px 0 #000; letter-spacing: .5px; }
+    .mosaic {
+      display: grid;
+      grid-template-areas:
+        'a a b'
+        'c d b'
+        'c e f';
+      gap: 10px;
+      width: 320px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .sq { display:block; width:100%; aspect-ratio:1/1; border:3px solid #000; box-shadow:6px 6px 0 #000; image-rendering: pixelated; }
+    .pix-star { position:absolute; width:10px; height:10px; background:#fff; border:2px solid #000; box-shadow:2px 2px 0 #000; animation: blink 1.6s infinite steps(2); }
+    @keyframes blink { 50% { opacity: .5; transform: translateY(-1px); } }
+  </style>
 </section>
