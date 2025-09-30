@@ -33,11 +33,13 @@ const {
     <meta name="google-site-verification" content="A0oZ9oKf_fP6JZP_R8YTsUM1Kduzf0lYTKZA6YlXKmQ" />
 
     <!-- ✅ Google Analytics -->
+    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WJRE2MXG00"></script>
-    <script is:inline>
+    <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){window.dataLayer.push(arguments);}
+      function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
+
       gtag('config', 'G-WJRE2MXG00');
     </script>
   </head>
