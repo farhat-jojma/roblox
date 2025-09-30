@@ -45,6 +45,19 @@ const {
       <slot />
     </main>
   </body>
+  <script is:inline>
+    document.addEventListener("DOMContentLoaded", () => {
+      const sectionId = localStorage.getItem("scrollTo");
+      if (sectionId) {
+        const el = document.getElementById(sectionId);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth" });
+        }
+        localStorage.removeItem("scrollTo");
+      }
+    });
+  </script>
+  
 </html>
 
 

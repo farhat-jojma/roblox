@@ -25,8 +25,14 @@ const dict = await import(`../locales/${locale}.json`).then((m) => m.default);
       </ul>
 
       <div class="mt-8 flex items-center gap-3">
-        <a href="#game" class="px-5 py-3 bg-yellow-300 hover:bg-yellow-400 transition-colors border-2 border-black shadow-[4px_4px_0_#000] font-semibold">{dict.featuresCTA}</a>
-        <a href="#tips" class="px-5 py-3 bg-white hover:bg-gray-100 transition-colors border-2 border-black shadow-[4px_4px_0_#000] font-semibold">{dict.featuresCTA2}</a>
+        <button onclick="document.getElementById('game').scrollIntoView({ behavior: 'smooth' })" 
+          class="px-5 py-3 bg-yellow-300 hover:bg-yellow-400 transition-colors border-2 border-black shadow-[4px_4px_0_#000] font-semibold">
+          {dict.featuresCTA}
+      </button>
+        <button onclick="document.getElementById('tips').scrollIntoView({ behavior: 'smooth' })" 
+          class="px-5 py-3 bg-white hover:bg-gray-100 transition-colors border-2 border-black shadow-[4px_4px_0_#000] font-semibold">
+          {dict.featuresCTA2}
+        </button>
       </div>
     </div>
 

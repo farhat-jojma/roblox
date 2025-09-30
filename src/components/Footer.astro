@@ -23,9 +23,28 @@ const dict = await import(`../locales/${locale}.json`).then((m) => m.default);
       <nav>
         <h3 class="font-bold mb-3">{dict.footerExplore}</h3>
         <ul class="space-y-2">
-          <li><a href="#game" class="underline hover:no-underline">{dict.footerPlay}</a></li>
-          <li><a href="#how-to-play" class="underline hover:no-underline">{dict.footerHowToPlay}</a></li>
-          <li><a href="#tips" class="underline hover:no-underline">{dict.footerTips}</a></li>
+          <li><a href={`/${locale}/`} class="underline hover:no-underline">{dict.footerPlay}</a></li>
+          <li>
+            <button
+              type="button"
+              onclick={`event.preventDefault(); goToSection('how-to-play','${locale}');`}
+              class="underline hover:no-underline"
+            >
+              {dict.footerHowToPlay}
+            </button>
+          </li>
+          
+          <li>
+            <button
+              type="button"
+              onclick={`event.preventDefault(); goToSection('tips','${locale}');`}
+              class="underline hover:no-underline"
+            >
+              {dict.footerTips}
+            </button>
+          </li>
+          
+          
         </ul>
       </nav>
 
@@ -40,12 +59,30 @@ const dict = await import(`../locales/${locale}.json`).then((m) => m.default);
     </div>
 
     <div class="mt-10 flex items-center justify-between border-t border-black/20 pt-6 text-sm text-gray-600">
-      <p>© {new Date().getFullYear()} {dict.footerCopyright}</p>
+      <p>© {new Date().getFullYear()} Pixel Drawing Online</p>
       <div class="flex items-center gap-3">
         <span class="pixel-icon blue" title="Social"></span>
         <span class="pixel-icon green" title="Social"></span>
       </div>
     </div>
   </div>
+  <script is:inline>
+    function goToSection(sectionId, locale) {
+      const isHome = window.location.pathname === `/${locale}/`;
+  
+      if (isHome) {
+        // Déjà sur la home → scroll direct
+        const el = document.getElementById(sectionId);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth" });
+        }
+      } else {
+        // Pas sur la home → stocke l’info et redirige
+        localStorage.setItem("scrollTo", sectionId);
+        window.location.href = `/${locale}/`;
+      }
+    }
+  </script>
+  
 </footer>
 

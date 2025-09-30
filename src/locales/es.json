@@ -52,13 +52,13 @@
   "termsCTAButton": "Jugar Pixel Drawing ahora",
 
   "otherGames": "Más juegos",
-  "otherGamesTitle": "Más juegos como Pixel Drawing",
-  "otherGamesCard1Title": "Colorear por Números",
-  "otherGamesCard1Text": "Relájate con pintura de píxeles guiada por números para resultados instantáneos.",
-  "otherGamesCard2Title": "Rompecabezas de Bloques",
-  "otherGamesCard2Text": "Encaja las piezas en la cuadrícula y entrena tu mente de manera divertida.",
-  "otherGamesCard3Title": "Aventuras Pixel",
-  "otherGamesCard3Text": "Explora mundos retro mientras recoges paletas y herramientas creativas.",
+  "otherGamesTitle": "Más juegos ",
+  "otherGamesCard1Title": "Free Cell Online",
+  "otherGamesCard1Text": "Juega Free Cell Online gratis – un clásico del solitario que pone a prueba tu estrategia y paciencia.",
+  "otherGamesCard2Title": "Car Game Online",
+  "otherGamesCard2Text": "Disfruta de Car Game Online con carreras emocionantes, velocidad y retos divertidos en cada pista.",
+  "otherGamesCard3Title": "Spider Solitaire",
+  "otherGamesCard3Text": "Diviértete con Spider Solitaire Online – el juego de cartas clásico que ejercita la mente y entretiene durante horas.",
   "otherGamesCTA": "Jugar ahora",
 
   "heroSubtitle1": "Crear. Colorear. Jugar.",
@@ -138,6 +138,5 @@
   "footerLegal": "Aviso legal",
   "footerAbout": "Sobre nosotros",
   "footerPrivacy": "Privacidad",
-  "footerTerms": "Términos",
-  "footerCopyright": "Pixel Drawing Online"
+  "footerTerms": "Términos"
 }
