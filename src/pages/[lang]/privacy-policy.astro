@@ -2,7 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import { getLangStaticPaths, resolveLang } from "../../lib/i18n";
 import HtmlContent from "../../components/HtmlContent.astro";
-
+import Footer from "../../components/Footer.astro";
 export async function getStaticPaths() {
   return getLangStaticPaths();
 }
@@ -67,11 +67,11 @@ const dict = await import(`../../locales/${locale}.json`).then((m) => m.default)
         {dict.privacyCTA}
       </h2>
       <p class="text-base md:text-lg text-gray-700 mb-6">{dict.privacyCTAText}</p>
-      <a href={`/${locale}/play`} class="pixel-cta bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg font-bold">
+      <a href={`/${locale}/`} class="pixel-cta bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg font-bold">
         {dict.privacyCTAButton}
       </a>
     </div>
   </section>
 
-  <div class="pixel-divider my-12"></div>
+  <Footer />
 </Layout>
