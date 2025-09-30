@@ -11,7 +11,7 @@ import Unblocked from "../../components/Unblocked.astro";
 import Online from "../../components/Online.astro";
 import Faq from "../../components/Faq.astro";
 import Platform from "../../components/Platform.astro";
-
+import Footer from "../../components/Footer.astro";
 import { getLangStaticPaths, resolveLang } from "../../lib/i18n";
 
 export async function getStaticPaths() {
@@ -27,6 +27,7 @@ const dict = await import(`../../locales/${locale}.json`).then((m) => m.default)
     <main class="flex-1 flex flex-col items-center justify-center px-4">
       <div class="w-full max-w-6xl">
         <Game path="https://games-dun-one.vercel.app/DrawPixels/index.html" />
+      </div>
         <Hero />
         <OtherGames />
         <HowToPlay />
@@ -37,7 +38,7 @@ const dict = await import(`../../locales/${locale}.json`).then((m) => m.default)
         <Online />
         <Faq />
         <Platform />
-      </div>
+      <Footer />
     </main>
   </div>
 </Layout>

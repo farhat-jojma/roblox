@@ -1,9 +1,40 @@
-<section class="w-full bg-green-50 py-12" hidden>
-```html
-<h2>How to Play Pixel Drawing</h2>
-<p>Are you ready to create colorful art using tiny squares? Let's get started! First, move your mouse over the blank grid. Click on any square to add a pixel in your chosen color. Want to try a different shade? Simply select a new color from the palette and continue clicking on the grid.</p>
-<p>If you make a mistake, don’t worry! Just click the eraser tool to remove any unwanted pixels. As you fill in each square, watch your picture come to life—it might be a bouncing puppy, a sparkling rainbow, or a delicious slice of pizza.</p>
-<p>Once you’re satisfied with your design, press the Save button to keep your artwork forever. You can also tap Share to show your creation to friends. Dive in, enjoy yourself, and see your very own pixel masterpiece come to life!</p>
-```
+<section id="how-to-play" class="w-full py-16 bg-gradient-to-b from-white to-emerald-50">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="inline-block px-3 py-1 mb-4 bg-white/90 border-2 border-black shadow-[4px_4px_0_#000]">
+      <span class="text-xs tracking-widest uppercase">Guide</span>
+    </div>
+    <h2 class="text-3xl sm:text-4xl font-extrabold mb-8 pixel-title">How to Play</h2>
 
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-white p-6 border-2 border-black shadow-[6px_6px_0_#000]">
+        <div class="w-8 h-8 bg-emerald-400 border-2 border-black mb-4"></div>
+        <h3 class="font-bold text-xl mb-2">Pick a Color</h3>
+        <p class="text-gray-700">Choose a color from the palette. Each square is a pixel—paint them to build your artwork.</p>
+      </div>
+
+      <div class="bg-white p-6 border-2 border-black shadow-[6px_6px_0_#000]">
+        <div class="w-8 h-8 bg-gray-200 border-2 border-black mb-4"></div>
+        <h3 class="font-bold text-xl mb-2">Click to Draw</h3>
+        <p class="text-gray-700">Click the grid to place pixels. Use the eraser to fix mistakes. Zoom in for precision.</p>
+      </div>
+
+      <div class="bg-white p-6 border-2 border-black shadow-[6px_6px_0_#000]">
+        <div class="w-8 h-8 bg-yellow-300 border-2 border-black mb-4"></div>
+        <h3 class="font-bold text-xl mb-2">Save & Share</h3>
+        <p class="text-gray-700">Export your creation and share it with friends. Come back to iterate and improve!</p>
+      </div>
+    </div>
+
+    <div class="mt-8 flex flex-wrap items-center gap-3">
+      <a href="#game" class="px-5 py-3 bg-yellow-300 hover:bg-yellow-400 transition-colors border-2 border-black shadow-[4px_4px_0_#000] font-semibold">Start Drawing</a>
+      <a href="#tips" class="px-5 py-3 bg-white hover:bg-gray-100 transition-colors border-2 border-black shadow-[4px_4px_0_#000] font-semibold">Pro Tips</a>
+    </div>
+  </div>
+
+  <style>
+    .pixel-title {
+      text-shadow: 0 0 0 #000, 2px 2px 0 #000, -2px 2px 0 #000;
+      letter-spacing: .5px;
+    }
+  </style>
 </section>
