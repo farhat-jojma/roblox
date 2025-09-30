@@ -1,39 +1,50 @@
-<section id="faq" class="w-full py-16 bg-teal-50">
+---
+import { getLangStaticPaths, resolveLang } from "../lib/i18n";
+
+export async function getStaticPaths() {
+  return getLangStaticPaths();
+}
+
+const locale = resolveLang(Astro.params.lang);
+const dict = await import(`../locales/${locale}.json`).then((m) => m.default);
+---
+
+<section id="faq" class="w-full py-16 bg-teal-50" lang={locale}>
   <div class="max-w-6xl mx-auto px-4">
     <div class="inline-block px-3 py-1 mb-4 bg-white/90 border-2 border-black shadow-[4px_4px_0_#000]">
-      <span class="text-xs tracking-widest uppercase">FAQ</span>
+      <span class="text-xs tracking-widest uppercase">{dict.faq}</span>
     </div>
-    <h2 class="text-3xl sm:text-4xl font-extrabold mb-6 pixel-title">Frequently Asked Questions</h2>
+    <h2 class="text-3xl sm:text-4xl font-extrabold mb-6 pixel-title">{dict.faqTitle}</h2>
 
     <div class="space-y-4">
       <details class="bg-white p-5 border-2 border-black shadow-[6px_6px_0_#000]" open>
-        <summary class="font-bold cursor-pointer">Do I have to download anything?</summary>
-        <p class="text-gray-700 mt-3">No installs required. Pixel Drawing runs in your browser—just open and start coloring.</p>
+        <summary class="font-bold cursor-pointer">{dict.faqCard1Title}</summary>
+        <p class="text-gray-700 mt-3">{dict.faqCard1Text}</p>
       </details>
 
       <details class="bg-white p-5 border-2 border-black shadow-[6px_6px_0_#000]">
-        <summary class="font-bold cursor-pointer">Which devices can I use?</summary>
-        <p class="text-gray-700 mt-3">Use phone, tablet, laptop, or desktop. The UI adapts to any screen size.</p>
+        <summary class="font-bold cursor-pointer">{dict.faqCard2Title}</summary>
+        <p class="text-gray-700 mt-3">{dict.faqCard2Text}</p>
       </details>
 
       <details class="bg-white p-5 border-2 border-black shadow-[6px_6px_0_#000]">
-        <summary class="font-bold cursor-pointer">Is Pixel Drawing really free?</summary>
-        <p class="text-gray-700 mt-3">Yes—completely free with no subscriptions. Create unlimited pixel art.</p>
+        <summary class="font-bold cursor-pointer">{dict.faqCard3Title}</summary>
+        <p class="text-gray-700 mt-3">{dict.faqCard3Text}</p>
       </details>
 
       <details class="bg-white p-5 border-2 border-black shadow-[6px_6px_0_#000]">
-        <summary class="font-bold cursor-pointer">Who can join in?</summary>
-        <p class="text-gray-700 mt-3">Everyone. Simple tools and bright palettes make it fun for all ages.</p>
+        <summary class="font-bold cursor-pointer">{dict.faqCard4Title}</summary>
+        <p class="text-gray-700 mt-3">{dict.faqCard4Text}</p>
       </details>
 
       <details class="bg-white p-5 border-2 border-black shadow-[6px_6px_0_#000]">
-        <summary class="font-bold cursor-pointer">How do I create my first masterpiece?</summary>
-        <p class="text-gray-700 mt-3">Pick a grid size and colors, then tap squares to fill them. Erase and iterate.</p>
+        <summary class="font-bold cursor-pointer">{dict.faqCard5Title}</summary>
+        <p class="text-gray-700 mt-3">{dict.faqCard5Text}</p>
       </details>
     </div>
 
     <div class="mt-8">
-      <a href="#game" class="px-5 py-3 bg-yellow-300 hover:bg-yellow-400 transition-colors border-2 border-black shadow-[4px_4px_0_#000] font-semibold">Start creating</a>
+      <a href="#game" class="px-5 py-3 bg-yellow-300 hover:bg-yellow-400 transition-colors border-2 border-black shadow-[4px_4px_0_#000] font-semibold">{dict.faqCTA}</a>
     </div>
   </div>
 

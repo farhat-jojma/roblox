@@ -1,34 +1,41 @@
 ---
-// src/components/OtherGames.astro
+import { getLangStaticPaths, resolveLang } from "../lib/i18n";
+
+export async function getStaticPaths() {
+  return getLangStaticPaths();
+}
+
+const locale =resolveLang(Astro.params.lang);
+const dict = await import(`../locales/${locale}.json`).then((m) => m.default);
 ---
-<section id="other-games" class="relative w-full py-16 sm:py-20 overflow-hidden bg-white">
+<section id="other-games" class="relative w-full py-16 sm:py-20 overflow-hidden bg-white" lang={locale}>
   <div class="absolute inset-0 -z-10 arcade-bg animate-bg"></div>
   <div class="max-w-6xl mx-auto px-4">
     <div class="inline-block px-3 py-1 mb-4 bg-white/90 border-2 border-black shadow-[4px_4px_0_#000]">
-      <span class="text-xs tracking-widest uppercase">More Games</span>
+      <span class="text-xs tracking-widest uppercase">{dict.otherGames}</span>
     </div>
-    <h2 class="text-3xl sm:text-4xl font-extrabold mb-8 pixel-title">More Games Like Pixel Drawing</h2>
+    <h2 class="text-3xl sm:text-4xl font-extrabold mb-8 pixel-title">{dict.otherGamesTitle}</h2>
 
     <div class="grid md:grid-cols-3 gap-6">
       <a href="#game" class="group block bg-white p-6 border-2 border-black shadow-[6px_6px_0_#000] relative overflow-hidden transition-transform duration-300 hover:-translate-y-1">
         <div class="absolute -right-6 -top-6 w-20 h-20 bg-blue-400 border-2 border-black rotate-45 group-hover:rotate-12 transition-transform"></div>
-        <h3 class="font-bold text-xl mb-2 relative">Color‑by‑Number</h3>
-        <p class="text-gray-700 relative">Relaxing pixel painting with numbered guides for instant results.</p>
+        <h3 class="font-bold text-xl mb-2 relative">{dict.otherGamesCard1Title}</h3>
+        <p class="text-gray-700 relative">{dict.otherGamesCard1Text}</p>
       </a>
       <a href="#game" class="group block bg-white p-6 border-2 border-black shadow-[6px_6px_0_#000] relative overflow-hidden transition-transform duration-300 hover:-translate-y-1">
         <div class="absolute -right-6 -top-6 w-20 h-20 bg-emerald-400 border-2 border-black rotate-12 group-hover:rotate-0 transition-transform"></div>
-        <h3 class="font-bold text-xl mb-2 relative">Block Puzzles</h3>
-        <p class="text-gray-700 relative">Fit shapes on a grid and train spatial thinking the fun way.</p>
+        <h3 class="font-bold text-xl mb-2 relative">{dict.otherGamesCard2Title}</h3>
+        <p class="text-gray-700 relative">{dict.otherGamesCard2Text}</p>
       </a>
       <a href="#game" class="group block bg-white p-6 border-2 border-black shadow-[6px_6px_0_#000] relative overflow-hidden transition-transform duration-300 hover:-translate-y-1">
         <div class="absolute -right-6 -top-6 w-20 h-20 bg-pink-400 border-2 border-black -rotate-6 group-hover:rotate-6 transition-transform"></div>
-        <h3 class="font-bold text-xl mb-2 relative">Pixel Adventures</h3>
-        <p class="text-gray-700 relative">Explore retro‑styled worlds while collecting palettes and tools.</p>
+        <h3 class="font-bold text-xl mb-2 relative">{dict.otherGamesCard3Title}</h3>
+        <p class="text-gray-700 relative">{dict.otherGamesCard3Text}</p>
       </a>
     </div>
 
     <div class="mt-8">
-      <a href="#game" class="px-5 py-3 bg-yellow-300 hover:bg-yellow-400 transition-colors border-2 border-black shadow-[4px_4px_0_#000] font-semibold">Play now</a>
+      <a href="#game" class="px-5 py-3 bg-yellow-300 hover:bg-yellow-400 transition-colors border-2 border-black shadow-[4px_4px_0_#000] font-semibold">{dict.otherGamesCTA}</a>
     </div>
   </div>
 

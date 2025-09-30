@@ -1,37 +1,48 @@
-<section id="tips" class="w-full py-16 bg-yellow-50">
+---
+import { getLangStaticPaths, resolveLang } from "../lib/i18n";
+
+export async function getStaticPaths() {
+  return getLangStaticPaths();
+}
+
+const locale = resolveLang(Astro.params.lang);
+const dict = await import(`../locales/${locale}.json`).then((m) => m.default);
+---
+
+<section id="tips" class="w-full py-16 bg-yellow-50" lang={locale}>
   <div class="max-w-6xl mx-auto px-4">
     <div class="inline-block px-3 py-1 mb-4 bg-white/90 border-2 border-black shadow-[4px_4px_0_#000]">
-      <span class="text-xs tracking-widest uppercase">Tips</span>
+      <span class="text-xs tracking-widest uppercase">{dict.tips}</span>
     </div>
-    <h2 class="text-3xl sm:text-4xl font-extrabold mb-8 pixel-title">Tips & Tricks</h2>
+    <h2 class="text-3xl sm:text-4xl font-extrabold mb-8 pixel-title">{dict.tipsTitle}</h2>
 
     <div class="grid md:grid-cols-2 gap-6">
       <div class="bg-white p-6 border-2 border-black shadow-[6px_6px_0_#000]">
-        <h3 class="font-bold text-xl mb-2">Start Small, Then Scale</h3>
-        <p class="text-gray-700">Begin with small grids to perfect shapes and outlines. Increase size to add detail and shading.</p>
+        <h3 class="font-bold text-xl mb-2">{dict.tipsCard1Title}</h3>
+        <p class="text-gray-700">{dict.tipsCard1Text}</p>
       </div>
       <div class="bg-white p-6 border-2 border-black shadow-[6px_6px_0_#000]">
-        <h3 class="font-bold text-xl mb-2">Use Limited Palettes</h3>
-        <p class="text-gray-700">Pick 3–5 colors to keep a cohesive style. Introduce contrast with one accent color.</p>
+        <h3 class="font-bold text-xl mb-2">{dict.tipsCard2Title}</h3>
+        <p class="text-gray-700">{dict.tipsCard2Text}</p>
       </div>
       <div class="bg-white p-6 border-2 border-black shadow-[6px_6px_0_#000]">
-        <h3 class="font-bold text-xl mb-2">Outline First</h3>
-        <p class="text-gray-700">Draw silhouettes in a dark color, then fill and shade for depth. Crisp borders read well.</p>
+        <h3 class="font-bold text-xl mb-2">{dict.tipsCard3Title}</h3>
+        <p class="text-gray-700">{dict.tipsCard3Text}</p>
       </div>
       <div class="bg-white p-6 border-2 border-black shadow-[6px_6px_0_#000]">
-        <h3 class="font-bold text-xl mb-2">Shading with Dithering</h3>
-        <p class="text-gray-700">Alternate pixels in a checker pattern to blend colors and create smooth gradients.</p>
+        <h3 class="font-bold text-xl mb-2">{dict.tipsCard4Title}</h3>
+        <p class="text-gray-700">{dict.tipsCard4Text}</p>
       </div>
     </div>
 
     <div class="mt-8">
-      <a href="#game" class="px-5 py-3 bg-yellow-300 hover:bg-yellow-400 transition-colors border-2 border-black shadow-[4px_4px_0_#000] font-semibold">Try these tips</a>
+      <a href="#game" class="px-5 py-3 bg-yellow-300 hover:bg-yellow-400 transition-colors border-2 border-black shadow-[4px_4px_0_#000] font-semibold">{dict.tipsCTA}</a>
     </div>
   </div>
 
   <style>
     .pixel-title {
-      text-shadow: 0 0 0 #000, 2px 2px 0 #000, -2px 2px 0 #000;
+      text-shadow: 0 0 0 #000, 2px 2px 0 #000, -2px 2px 0 #000; 
       letter-spacing: .5px;
     }
   </style>

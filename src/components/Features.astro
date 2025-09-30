@@ -1,21 +1,32 @@
-<section id="features" class="relative w-full py-16 sm:py-20 overflow-hidden bg-rose-50">
+---
+import { getLangStaticPaths, resolveLang } from "../lib/i18n";
+
+export async function getStaticPaths() {
+  return getLangStaticPaths();
+}
+
+const locale = resolveLang(Astro.params.lang);
+const dict = await import(`../locales/${locale}.json`).then((m) => m.default);
+---
+
+<section id="features" class="relative w-full py-16 sm:py-20 overflow-hidden bg-rose-50" lang={locale}>
   <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
     <div>
       <div class="inline-block px-3 py-1 mb-4 bg-white/90 border-2 border-black shadow-[4px_4px_0_#000]">
-        <span class="text-xs tracking-widest uppercase">Features</span>
+        <span class="text-xs tracking-widest uppercase">{dict.features}</span>
       </div>
-      <h2 class="text-3xl sm:text-4xl font-extrabold mb-4 pixel-title">Built for playful creation</h2>
-      <p class="text-gray-700 mb-6">Everything is tuned for pixel art: sharp grids, bold palettes, and tools that make retro design feel modern.</p>
+      <h2 class="text-3xl sm:text-4xl font-extrabold mb-4 pixel-title">{dict.featuresTitle}</h2>
+      <p class="text-gray-700 mb-6">{dict.featuresSubtitle}</p>
 
       <ul class="space-y-3">
-        <li class="flex gap-3 items-start"><span class="inline-block mt-1 w-3 h-3 bg-emerald-400 border-2 border-black"></span><span><strong>Instant start:</strong> open in browser and draw—no setup.</span></li>
-        <li class="flex gap-3 items-start"><span class="inline-block mt-1 w-3 h-3 bg-fuchsia-500 border-2 border-black"></span><span><strong>Smart grid:</strong> snap, mirror and fill keep lines crisp.</span></li>
-        <li class="flex gap-3 items-start"><span class="inline-block mt-1 w-3 h-3 bg-amber-300 border-2 border-black"></span><span><strong>Share fast:</strong> export PNGs with a retro frame.</span></li>
+        <li class="flex gap-3 items-start"><span class="inline-block mt-1 w-3 h-3 bg-emerald-400 border-2 border-black"></span><span><strong>{dict.featuresCard1Title}:</strong>{dict.featuresCard1Text}</span></li>
+        <li class="flex gap-3 items-start"><span class="inline-block mt-1 w-3 h-3 bg-fuchsia-500 border-2 border-black"></span><span><strong>{dict.featuresCard2Title}:</strong>{dict.featuresCard2Text}</span></li>
+        <li class="flex gap-3 items-start"><span class="inline-block mt-1 w-3 h-3 bg-amber-300 border-2 border-black"></span><span><strong>{dict.featuresCard3Title}:</strong>{dict.featuresCard3Text}</span></li>
       </ul>
 
       <div class="mt-8 flex items-center gap-3">
-        <a href="#game" class="px-5 py-3 bg-yellow-300 hover:bg-yellow-400 transition-colors border-2 border-black shadow-[4px_4px_0_#000] font-semibold">Try the features</a>
-        <a href="#tips" class="px-5 py-3 bg-white hover:bg-gray-100 transition-colors border-2 border-black shadow-[4px_4px_0_#000] font-semibold">Pro tips</a>
+        <a href="#game" class="px-5 py-3 bg-yellow-300 hover:bg-yellow-400 transition-colors border-2 border-black shadow-[4px_4px_0_#000] font-semibold">{dict.featuresCTA}</a>
+        <a href="#tips" class="px-5 py-3 bg-white hover:bg-gray-100 transition-colors border-2 border-black shadow-[4px_4px_0_#000] font-semibold">{dict.featuresCTA2}</a>
       </div>
     </div>
 
