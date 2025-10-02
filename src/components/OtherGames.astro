@@ -29,8 +29,8 @@ const dict = await import(`../locales/${locale}.json`).then((m) => m.default);
         </div>
         <p class="text-gray-100 text-sm leading-relaxed">{dict.otherGamesCard1Text}</p>
         <div class="roblox-tags">
-          <span class="roblox-tag roblox-tag--orange">Obby</span>
-          <span class="roblox-tag roblox-tag--purple">Classic</span>
+          <span class="roblox-tag roblox-tag--orange">{dict.card}</span>
+          <span class="roblox-tag roblox-tag--purple">{dict.classic}</span>
         </div>
       </a>
       <a href={`https://www.gamesonlinegratis.com/${locale}/game/super-pix/`} target="_blank" rel="noopener noreferrer" class="group block roblox-game-card roblox-game-card--orange">
@@ -41,8 +41,8 @@ const dict = await import(`../locales/${locale}.json`).then((m) => m.default);
         </div>
         <p class="text-gray-100 text-sm leading-relaxed">{dict.otherGamesCard2Text}</p>
         <div class="roblox-tags">
-          <span class="roblox-tag roblox-tag--blue">Tycoon</span>
-          <span class="roblox-tag roblox-tag--purple">Multiplayer</span>
+          <span class="roblox-tag roblox-tag--blue">{dict.arcade}</span>
+          <span class="roblox-tag roblox-tag--purple">{dict.retros}</span>
         </div>
       </a>
       <a href={`https://www.gamesonlinegratis.com/${locale}/game/fruit-party/`} target="_blank" rel="noopener noreferrer" class="group block roblox-game-card roblox-game-card--purple">
@@ -53,8 +53,8 @@ const dict = await import(`../locales/${locale}.json`).then((m) => m.default);
         </div>
         <p class="text-gray-100 text-sm leading-relaxed">{dict.otherGamesCard3Text}</p>
         <div class="roblox-tags">
-          <span class="roblox-tag roblox-tag--orange">Simulator</span>
-          <span class="roblox-tag roblox-tag--blue">Casual</span>
+          <span class="roblox-tag roblox-tag--orange">{dict.puzzle}</span>
+          <span class="roblox-tag roblox-tag--blue">{dict.casual}</span>
         </div>
       </a>
     </div>

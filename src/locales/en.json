@@ -1,7 +1,7 @@
 {
-  "siteName": "Roblox Obby Parkour Ultimate",
-  "title": "Roblox Obby Parkour Ultimate - Free Online Obstacle Course Game 2024",
-  "description": "Play Roblox Obby Parkour Ultimate free online! Master challenging obstacle courses, epic parkour jumps, and thrilling adventures. No download required - start playing now!",
+  "siteName": "Roblox Obby Online",
+  "title": "Roblox Obby - Free Online Obstacle Course Game 2024",
+  "description": "Play Roblox Obby  free online! Master challenging obstacle courses, epic parkour jumps, and thrilling adventures. No download required - start playing now!",
   "play": "Play Now",
   "enjoy": "Enjoy the game!",
   "subtitle": "Master epic obstacle courses and parkour challenges online for free",
@@ -12,7 +12,8 @@
     "privacy": "Privacy Policy",
     "terms": "Terms of Service"
   },
-  "aboutTitle": "About Roblox Obby Parkour Ultimate",
+  "about": "About",
+  "aboutTitle": "About Roblox Obby ",
   "aboutSubtitle": "Experience the ultimate parkour adventure with challenging obstacle courses, epic jumps, and endless fun. Join millions of players in the most exciting Roblox obby game!",
   "roblox": "Epic Parkour",
   "retro": "Obstacle Master",
@@ -29,7 +30,7 @@
   "aboutCTAText": "Join thousands of players conquering epic obstacle courses. Test your parkour skills and become a legend!",
   "aboutCTAButton": "Start Your Parkour Journey",
 
-  "privacyTitle": "Privacy Policy - Roblox Obby Parkour Ultimate",
+  "privacyTitle": "Privacy Policy - Roblox Obby ",
   "privacySubtitle": "Your privacy and safety are our top priorities. Learn how we protect your data while you enjoy epic parkour adventures.",
   "safe": "Safe Gaming",
   "secure": "Data Protection",
@@ -40,7 +41,7 @@
   "privacyCTAText" : "We ensure your personal information stays secure while you master challenging obstacle courses and parkour adventures.",
   "privacyCTAButton": "Play Roblox Obby Safely",
 
-  "termsTitle": "Terms of Service - Roblox Obby Parkour Ultimate",
+  "termsTitle": "Terms of Service - Roblox Obby ",
   "termsSubtitle": "Understand your rights and responsibilities while enjoying the ultimate parkour gaming experience in our obstacle courses.",
   "rules": "Fair Rules",
   "fair": "Equal Play",
@@ -53,14 +54,20 @@
 
   "otherGames": "More Roblox Adventures",
   "otherGamesTitle": "Explore More Epic Roblox Games",
-  "otherGamesCard1Title": "Roblox Speed Run Simulator",
-  "otherGamesCard1Text": "Race against time in high-speed parkour challenges. Master lightning-fast obstacle courses and compete for world records.",
-  "otherGamesCard2Title": "Roblox Tower of Hell",
-  "otherGamesCard2Text": "Climb the ultimate vertical challenge! Navigate through hundreds of floors filled with deadly traps and impossible jumps.",
-  "otherGamesCard3Title": "Roblox Ninja Legends",
-  "otherGamesCard3Text": "Become a legendary ninja warrior! Train your skills, unlock powerful abilities, and conquer epic boss battles.",
+  "otherGamesCard1Title": "Free Cell Online",
+  "otherGamesCard1Text": "Play FreeCell online for free - a classic solitaire card game that tests your strategy and patience.",
+  "otherGamesCard2Title": "Super Pix Online",
+  "otherGamesCard2Text": "Play Super Pix Online – a fun pixel puzzle game where you match and connect colorful blocks for endless entertainment.",
+  "otherGamesCard3Title": "Fruit Party Online",
+  "otherGamesCard3Text": "Enjoy Fruit Party Online – a vibrant slot-style game filled with juicy fruits, exciting spins, and big win opportunities.",
   "otherGamesCTA": "Play Adventure",
-
+  "card": "Card",
+  "classic": "Classic",
+  "arcade": "Tycoon",
+  "retros": "Retro",
+  "puzzle": "Puzzle",
+  "casual": "Casual",
+  
   "heroSubtitle1": "Jump. Dodge. Dash.",
   "heroTitle": "Roblox Obby Parkour",
   "heroTitle2": "Ultimate",
@@ -69,7 +76,7 @@
   "heroCTA2": "How to Play",
 
   "howToPlay": "Guide",
-  "howToPlayTitle": "How to Play Roblox Obby Parkour Ultimate",
+  "howToPlayTitle": "How to Play Roblox Obby ",
   "howToPlayIntro": "Ready to conquer the most challenging parkour obstacles? Master these essential techniques to dominate every course and achieve legendary status:",
   "howToPlayStep1": "Launch into action - Click Play to enter the ultimate parkour arena.",
   "howToPlayStep2": "Master movement - Use WASD or Arrow Keys for precise character control.",
@@ -82,8 +89,8 @@
   "howToPlayCTA2": "Tips",
 
   "tips": "Tips",
-  "tipsTitle": "Pro Parkour Strategies & Advanced Tips",
-  "tipsIntro": "Elevate your gameplay with these expert strategies! Master advanced techniques, discover hidden secrets, and dominate the leaderboards in Roblox Obby Parkour Ultimate.",
+  "tipsTitle": "Pro Roblox Strategies & Advanced Tips",
+  "tipsIntro": "Elevate your gameplay with these expert strategies! Master advanced techniques, discover hidden secrets, and dominate the leaderboards in Roblox Obby .",
   "tipsCard1Title": "Perfect Jump Timing & Momentum",
   "tipsCard1Text": "Master edge-jumping and momentum conservation. Build speed on straight sections, then use precise timing for maximum distance on challenging gaps.",
   "tipsCard2Title": "Secret Areas & Bonus Rewards",
@@ -108,7 +115,7 @@
   "featuresCTA2": "See Tips",
 
   "unblocked": "Unblocked",
-  "unblockedTitle": "Play Roblox Obby Parkour Ultimate Unblocked Anywhere",
+  "unblockedTitle": "Play Roblox Obby  Unblocked Anywhere",
   "unblockedSubtitle": "Access the full parkour experience from any device or network! No restrictions, no downloads, no barriers—just pure obstacle course action available 24/7.",
   "unblockedCard1Title": "Universal Access & Compatibility",
   "unblockedCard1Text": "Play seamlessly on school networks, work computers, and public WiFi. Fully optimized for all devices and browsers without restrictions.",
@@ -120,7 +127,7 @@
   "unblockedCTA2": "See Tips",
 
   "faq": "FAQ",
-  "faqTitle": "Expert Guide: Roblox Obby Parkour Ultimate FAQ",
+  "faqTitle": "Expert Guide: Roblox Obby  FAQ",
   "faqIntro": "Master the ultimate parkour experience! Get answers to the most common questions about gameplay, features, and strategies from our expert community.",
   "faqCard1Title": "What Makes This the Ultimate Obby Experience?",
   "faqCard1Text": "Advanced physics engine, 100+ unique obstacle courses, competitive leaderboards, multiplayer races, and regular content updates. No other obby offers this level of depth and challenge.",
@@ -144,5 +151,5 @@
   "footerAbout": "About Game",
   "footerPrivacy": "Privacy",
   "footerTerms": "Terms",
-  "footerCopyright": "Roblox Obby Parkour Ultimate"
+  "footerCopyright": "Roblox Obby "
 }
