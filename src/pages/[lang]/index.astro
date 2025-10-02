@@ -23,9 +23,9 @@ const dict = await import(`../../locales/${locale}.json`).then((m) => m.default)
 ---
 
 <Layout lang={locale} title={dict.title} description={dict.description} isHomePage={true}>
-  <div class="flex bg-white h-full">
-    <main class="flex-1 flex flex-col items-center justify-center px-4">
-      <div class="w-full max-w-6xl">
+  <div class="flex h-full">
+    <main class="flex-1 flex flex-col items-center justify-center">
+      <div class="w-full">
         <Game path="https://games-dun-one.vercel.app/Roblox/index.html" />
       </div>
         <OtherGames />

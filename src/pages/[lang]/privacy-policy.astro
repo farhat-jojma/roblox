@@ -21,7 +21,7 @@ const dict = await import(`../../locales/${locale}.json`).then((m) => m.default)
     <div class="relative max-w-6xl mx-auto px-6 text-center">
       <!-- Roblox-style badge -->
       <div class="inline-block px-6 py-3 mb-8 bg-[#C0B5B1] text-black border-4 border-black shadow-[8px_8px_0_#000] transform rotate-1 roblox-privacy-badge">
-        <span class="text-sm font-black tracking-widest uppercase">Privacy Protection</span>
+        <span class="text-sm font-black tracking-widest uppercase">{dict.privacyP}</span>
       </div>
 
       <!-- Enhanced Title -->
@@ -80,7 +80,6 @@ const dict = await import(`../../locales/${locale}.json`).then((m) => m.default)
     <div class="roblox-privacy-content-panel">
       <div class="roblox-privacy-content-header">
         <div class="roblox-privacy-content-icon">🔐</div>
-        <h2 class="roblox-privacy-content-title">Privacy & Data Protection</h2>
         <div class="roblox-privacy-content-decoration">
           <div class="roblox-privacy-content-stud"></div>
           <div class="roblox-privacy-content-stud"></div>
