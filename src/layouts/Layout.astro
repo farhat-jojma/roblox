@@ -29,23 +29,11 @@ const {
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
 
-    <!-- ✅ Google Search Console -->
-    <meta name="google-site-verification" content="A0oZ9oKf_fP6JZP_R8YTsUM1Kduzf0lYTKZA6YlXKmQ" />
-
-    <!-- ✅ Google Analytics -->
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QCMN9G765Z"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-QCMN9G765Z');
-    </script>
+    
   </head>
 
   <body id="game" class={`bg-gray-50 text-gray-900`}>
-    <Nav siteName="Pixel Drawing Online" />
+    <Nav siteName="Roblox Obby Online" />
     <main class={isHomePage ? '' : 'min-h-screen'}>
       <slot />
     </main>

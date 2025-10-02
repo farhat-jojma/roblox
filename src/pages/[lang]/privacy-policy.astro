@@ -12,76 +12,123 @@ const dict = await import(`../../locales/${locale}.json`).then((m) => m.default)
 ---
 
 <Layout lang={locale} title={dict.privacyTitle}>
-  <!-- Pixel Hero -->
-  <section class="relative bg-gradient-to-r from-green-600 via-cyan-500 to-purple-600 text-white py-16 overflow-hidden">
-    <!-- Animated pixel grid overlay -->
-    <div class="absolute inset-0 bg-[url('/pixel-grid.png')] opacity-30 animate-pulse"></div>
+  <!-- Roblox Privacy Hero Section -->
+  <section class="relative bg-gradient-to-br from-[#4387E3] via-[#551084] to-[#4387E3] text-white py-20 overflow-hidden">
+    <!-- Roblox brick pattern background -->
+    <div class="absolute inset-0 -z-10 roblox-privacy-pattern animate-drift"></div>
+    <div class="absolute inset-0 -z-10 roblox-privacy-glow"></div>
   
-    <div class="relative max-w-5xl mx-auto px-6 text-center">
-      <!-- Gradient Glow Title -->
-      <h1 class="text-4xl md:text-6xl font-black pixel-font mb-6 bg-gradient-to-r from-green-300 via-cyan-200 to-purple-300 bg-clip-text text-transparent drop-shadow-[0_0_10px_#32CD32]">
+    <div class="relative max-w-6xl mx-auto px-6 text-center">
+      <!-- Roblox-style badge -->
+      <div class="inline-block px-6 py-3 mb-8 bg-[#C0B5B1] text-black border-4 border-black shadow-[8px_8px_0_#000] transform rotate-1 roblox-privacy-badge">
+        <span class="text-sm font-black tracking-widest uppercase">Privacy Protection</span>
+      </div>
+
+      <!-- Enhanced Title -->
+      <h1 class="text-5xl md:text-7xl font-black mb-8 roblox-privacy-title">
         {dict.privacyTitle}
       </h1>
-      <p class="text-lg md:text-xl text-gray-100 max-w-3xl mx-auto leading-relaxed">
+      <p class="text-xl md:text-2xl text-white max-w-4xl mx-auto leading-relaxed font-semibold mb-12">
         {dict.privacySubtitle}
       </p>
   
-      <!-- Pixel Badges -->
-      <div class="mt-10 flex justify-center gap-3 flex-wrap">
-        <span class="pixel-badge bg-green-500 text-white">🛡️ {dict.safe}</span>
-        <span class="pixel-badge bg-cyan-400 text-black">🔒 {dict.secure}</span>
-        <span class="pixel-badge bg-yellow-400 text-black">✨ {dict.transparency}</span>
-        <span class="pixel-badge bg-purple-500 text-white">🌈 {dict.trust}</span>
-        <span class="pixel-badge bg-pink-500 text-white">💖 {dict.privacy}</span>
+      <!-- Roblox-style badges -->
+      <div class="flex justify-center gap-4 flex-wrap mb-16">
+        <div class="roblox-privacy-feature-badge roblox-privacy-feature-badge--gray">
+          <div class="roblox-privacy-badge-icon">🛡️</div>
+          <span class="roblox-privacy-badge-text">{dict.safe}</span>
+        </div>
+        <div class="roblox-privacy-feature-badge roblox-privacy-feature-badge--blue">
+          <div class="roblox-privacy-badge-icon">🔒</div>
+          <span class="roblox-privacy-badge-text">{dict.secure}</span>
+        </div>
+        <div class="roblox-privacy-feature-badge roblox-privacy-feature-badge--orange">
+          <div class="roblox-privacy-badge-icon">✨</div>
+          <span class="roblox-privacy-badge-text">{dict.transparency}</span>
+        </div>
+        <div class="roblox-privacy-feature-badge roblox-privacy-feature-badge--purple">
+          <div class="roblox-privacy-badge-icon">🌈</div>
+          <span class="roblox-privacy-badge-text">{dict.trust}</span>
+        </div>
+        <div class="roblox-privacy-feature-badge roblox-privacy-feature-badge--gray">
+          <div class="roblox-privacy-badge-icon">💖</div>
+          <span class="roblox-privacy-badge-text">{dict.privacy}</span>
+        </div>
       </div>
   
-      <!-- Floating Pixel Art -->
-      <div class="pixel-hero-art mt-10 animate-bounce-slow" aria-hidden="true">
-        <svg width="240" height="110" viewBox="0 0 240 110">
-          <rect x="10"  y="25" width="20" height="20" fill="#32CD32" stroke="#111" stroke-width="4"/>
-          <rect x="40"  y="12" width="18" height="18" fill="#ffd93d" stroke="#111" stroke-width="4"/>
-          <rect x="70"  y="38" width="22" height="22" fill="#00CFFF" stroke="#111" stroke-width="4"/>
-          <rect x="110" y="18" width="16" height="16" fill="#ff3d6e" stroke="#111" stroke-width="4"/>
-          <rect x="140" y="30" width="24" height="24" fill="#fffef4" stroke="#111" stroke-width="4"/>
-          <rect x="170" y="14" width="20" height="20" fill="#9b5de5" stroke="#111" stroke-width="4"/>
-          <rect x="200" y="28" width="22" height="22" fill="#ff8500" stroke="#111" stroke-width="4"/>
-        </svg>
+      <!-- Roblox brick tower -->
+      <div class="roblox-privacy-brick-tower-container">
+        <div class="roblox-privacy-brick roblox-privacy-brick--blue" style="animation-delay: 0s;"></div>
+        <div class="roblox-privacy-brick roblox-privacy-brick--purple" style="animation-delay: 0.2s;"></div>
+        <div class="roblox-privacy-brick roblox-privacy-brick--gray" style="animation-delay: 0.4s;"></div>
+        <div class="roblox-privacy-brick roblox-privacy-brick--orange" style="animation-delay: 0.6s;"></div>
       </div>
+    </div>
+
+    <!-- Floating elements -->
+    <div class="pointer-events-none absolute inset-0 -z-10">
+      <div class="roblox-privacy-floating-element" style="top:15%;left:8%;"></div>
+      <div class="roblox-privacy-floating-element" style="top:30%;right:12%;"></div>
+      <div class="roblox-privacy-floating-element" style="bottom:25%;left:15%;"></div>
+      <div class="roblox-privacy-floating-element" style="bottom:40%;right:8%;"></div>
     </div>
   </section>
   
 
-  <!-- Pixel Panel Content -->
-  <section class="relative max-w-5xl mx-auto px-6 py-14">
-    <div class="pixel-panel p-6 md:p-10 border-4 border-green-400 shadow-[4px_4px_0px_#32CD32] bg-white">
-      <div class="prose prose-gray mx-auto leading-relaxed">
+  <!-- Roblox Privacy Content Panel -->
+  <section class="relative max-w-6xl mx-auto px-6 py-16">
+    <div class="roblox-privacy-content-panel">
+      <div class="roblox-privacy-content-header">
+        <div class="roblox-privacy-content-icon">🔐</div>
+        <h2 class="roblox-privacy-content-title">Privacy & Data Protection</h2>
+        <div class="roblox-privacy-content-decoration">
+          <div class="roblox-privacy-content-stud"></div>
+          <div class="roblox-privacy-content-stud"></div>
+          <div class="roblox-privacy-content-stud"></div>
+        </div>
+      </div>
+      <div class="roblox-privacy-content-body">
         <HtmlContent slug="privacy" locale={locale} fallbackText="Privacy policy not available." />
       </div>
     </div>
   </section>
 
-  <!-- Pixel CTA -->
-  <section class="relative text-white py-20 md:py-24  overflow-hidden">
-    <!-- subtle pixel grid -->
-    <div class="absolute inset-0 bg-[url('/pixel-grid.png')] opacity-10 pointer-events-none"></div>
+  <!-- Roblox Privacy CTA Section -->
+  <section class="relative bg-gradient-to-br from-gray via-[#B6ABA8] to-[#C0B5B1] text-white py-20 overflow-hidden">
+    <div class="absolute inset-0 -z-10 roblox-privacy-cta-pattern animate-rotate-slow"></div>
 
-    <!-- floating pixels -->
-    <div class="pointer-events-none absolute -top-4 left-8 h-3 w-3 bg-pink-500 border-2 border-black shadow-[3px_3px_0_#000] animate-ping-slow"></div>
-    <div class="pointer-events-none absolute top-6 right-10 h-3 w-3 bg-yellow-300 border-2 border-black shadow-[3px_3px_0_#000] animate-pulse"></div>
+    <!-- Floating Roblox elements -->
+    <div class="pointer-events-none absolute inset-0 -z-10">
+      <div class="roblox-privacy-cta-cube" style="top:10%;left:10%;"></div>
+      <div class="roblox-privacy-cta-cube" style="top:20%;right:15%;"></div>
+      <div class="roblox-privacy-cta-cube" style="bottom:15%;left:20%;"></div>
+      <div class="roblox-privacy-cta-cube" style="bottom:25%;right:10%;"></div>
+    </div>
 
-    <div class="relative max-w-4xl mx-auto px-6">
-      <div class="pixel-panel mx-auto max-w-3xl border-4 border-pink-500  backdrop-blur-sm p-8 md:p-10 text-center shadow-[6px_6px_0_#000]">
-        <h2 class="text-3xl md:text-5xl font-black pixel-font mb-4 drop-shadow-[0_0_10px_#ff3d6e]">
+    <div class="relative max-w-5xl mx-auto px-6">
+      <div class="roblox-privacy-cta-panel">
+        <div class="roblox-privacy-cta-header">
+          <div class="roblox-privacy-cta-badge">Your Data is Safe</div>
+        </div>
+        <h2 class="roblox-privacy-cta-title">
           {dict.privacyCTA}
         </h2>
-        <p class="text-base md:text-lg text-black mb-8">
+        <p class="roblox-privacy-cta-text">
           {dict.privacyCTAText}
         </p>
 
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
-          <a href={`/${locale}/`} aria-label={dict.privacyCTAButton} class="pixel-cta bg-pink-500 hover:bg-pink-600 active:translate-y-[2px] text-white px-6 py-3 rounded-lg font-bold shadow-[4px_4px_0_#000]">
-            {dict.privacyCTAButton}
+        <div class="roblox-privacy-cta-actions">
+          <a href={`/${locale}/`} aria-label={dict.privacyCTAButton} class="roblox-privacy-cta-button">
+            <span class="roblox-privacy-cta-button__text">{dict.privacyCTAButton}</span>
+            <div class="roblox-privacy-cta-button__glow"></div>
           </a>
+        </div>
+        
+        <!-- Decorative elements -->
+        <div class="roblox-privacy-cta-decoration">
+          <div class="roblox-privacy-cta-brick roblox-privacy-cta-brick--blue"></div>
+          <div class="roblox-privacy-cta-brick roblox-privacy-cta-brick--purple"></div>
+          <div class="roblox-privacy-cta-brick roblox-privacy-cta-brick--gray"></div>
         </div>
       </div>
     </div>
@@ -89,3 +136,385 @@ const dict = await import(`../../locales/${locale}.json`).then((m) => m.default)
 
   <Footer />
 </Layout>
+
+<style>
+  /* Roblox Privacy Page Styles */
+  
+  /* Hero Section */
+  .roblox-privacy-pattern {
+    background-image: 
+      radial-gradient(circle at 70px 70px, rgba(192, 181, 177, 0.1) 10px, transparent 11px),
+      radial-gradient(circle at 210px 70px, rgba(182, 171, 168, 0.1) 10px, transparent 11px),
+      radial-gradient(circle at 140px 210px, rgba(67, 135, 227, 0.1) 10px, transparent 11px);
+    background-size: 280px 280px;
+  }
+
+  .roblox-privacy-glow {
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    animation: glow-sweep 6s ease-in-out infinite;
+  }
+
+  .roblox-privacy-badge {
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+  }
+  .roblox-privacy-badge::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    animation: badge-shine 3s infinite;
+  }
+
+  .roblox-privacy-title {
+    text-shadow: 6px 6px 0 #000, -3px -3px 0 #000, 3px -3px 0 #000, -3px 3px 0 #000;
+    letter-spacing: 3px;
+    background: linear-gradient(45deg, #C0B5B1, #B6ABA8, #4387E3, #551084);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-size: 300% 300%;
+    animation: gradient-shift 4s ease-in-out infinite;
+  }
+
+  /* Feature Badges */
+  .roblox-privacy-feature-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 1.5rem;
+    border: 4px solid #000;
+    border-radius: 16px;
+    box-shadow: 6px 6px 0 #000;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .roblox-privacy-feature-badge--orange { background: linear-gradient(45deg, #EF5B1D, #C46002); }
+  .roblox-privacy-feature-badge--blue { background: linear-gradient(45deg, #4387E3, #551084); }
+  .roblox-privacy-feature-badge--purple { background: linear-gradient(45deg, #551084, #4387E3); }
+  .roblox-privacy-feature-badge--gray { background: linear-gradient(45deg, #C0B5B1, #B6ABA8); }
+
+  .roblox-privacy-feature-badge:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 10px 10px 0 #000;
+  }
+
+  .roblox-privacy-badge-icon {
+    font-size: 1.5rem;
+    width: 40px;
+    height: 40px;
+    background: rgba(255,255,255,0.2);
+    border: 3px solid #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 3px 3px 0 #000;
+  }
+
+  .roblox-privacy-badge-text {
+    font-weight: 900;
+    color: white;
+    text-shadow: 2px 2px 0 #000;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  /* Brick Tower */
+  .roblox-privacy-brick-tower-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .roblox-privacy-brick {
+    width: 60px;
+    height: 40px;
+    border: 4px solid #000;
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 6px 6px 0 #000;
+    animation: brick-float 4s ease-in-out infinite;
+  }
+
+  .roblox-privacy-brick::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    background: rgba(255,255,255,0.4);
+    border-radius: 50%;
+    box-shadow: 16px 0 0 rgba(255,255,255,0.4);
+  }
+
+  .roblox-privacy-brick--orange { background: linear-gradient(135deg, #EF5B1D, #C46002); }
+  .roblox-privacy-brick--blue { background: linear-gradient(135deg, #4387E3, #551084); }
+  .roblox-privacy-brick--purple { background: linear-gradient(135deg, #551084, #4387E3); }
+  .roblox-privacy-brick--gray { background: linear-gradient(135deg, #C0B5B1, #B6ABA8); }
+
+  /* Floating Elements */
+  .roblox-privacy-floating-element {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: linear-gradient(45deg, #C0B5B1, #4387E3);
+    border: 3px solid #000;
+    border-radius: 4px;
+    box-shadow: 3px 3px 0 #000;
+    animation: element-float 6s ease-in-out infinite;
+  }
+
+  .roblox-privacy-floating-element::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 6px;
+    height: 6px;
+    background: rgba(255,255,255,0.6);
+    border-radius: 50%;
+  }
+
+  /* Content Panel */
+  .roblox-privacy-content-panel {
+    background: linear-gradient(135deg, #ffffff, #f8f9fa);
+    border: 4px solid #000;
+    border-radius: 20px;
+    box-shadow: 10px 10px 0 #000;
+    overflow: hidden;
+  }
+
+  .roblox-privacy-content-header {
+    background: linear-gradient(45deg, #4387E3, #551084);
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 4px solid #000;
+  }
+
+  .roblox-privacy-content-icon {
+    font-size: 2rem;
+    width: 60px;
+    height: 60px;
+    background: rgba(255,255,255,0.2);
+    border: 4px solid #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 4px 4px 0 #000;
+  }
+
+  .roblox-privacy-content-title {
+    font-size: 2rem;
+    font-weight: 900;
+    color: white;
+    text-shadow: 3px 3px 0 #000;
+    letter-spacing: 2px;
+    flex: 1;
+    text-align: center;
+  }
+
+  .roblox-privacy-content-decoration {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .roblox-privacy-content-stud {
+    width: 16px;
+    height: 16px;
+    background: rgba(255,255,255,0.3);
+    border: 2px solid #000;
+    border-radius: 50%;
+    animation: stud-pulse 2s ease-in-out infinite;
+  }
+
+  .roblox-privacy-content-body {
+    padding: 3rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+  }
+
+  /* CTA Section */
+  .roblox-privacy-cta-pattern {
+    background-image: 
+      radial-gradient(circle at 100px 100px, rgba(192, 181, 177, 0.1) 10px, transparent 11px),
+      radial-gradient(circle at 300px 100px, rgba(182, 171, 168, 0.1) 10px, transparent 11px),
+      radial-gradient(circle at 200px 300px, rgba(67, 135, 227, 0.1) 10px, transparent 11px);
+    background-size: 400px 400px;
+  }
+
+  .roblox-privacy-cta-cube {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(45deg, #C0B5B1, #B6ABA8);
+    border: 3px solid #000;
+    border-radius: 4px;
+    box-shadow: 4px 4px 0 #000;
+    animation: cube-spin 8s ease-in-out infinite;
+  }
+
+  .roblox-privacy-cta-cube::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    background: rgba(255,255,255,0.5);
+    border-radius: 50%;
+  }
+
+  .roblox-privacy-cta-panel {
+    background: linear-gradient(135deg, #ffffff, #f8f9fa);
+    border: 4px solid #000;
+    border-radius: 24px;
+    padding: 3rem;
+    text-align: center;
+    box-shadow: 12px 12px 0 #000;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .roblox-privacy-cta-header {
+    margin-bottom: 2rem;
+  }
+
+  .roblox-privacy-cta-badge {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(45deg, #4387E3, #551084);
+    color: white;
+    border: 3px solid #000;
+    border-radius: 20px;
+    font-weight: 900;
+    font-size: 1rem;
+    text-shadow: 2px 2px 0 #000;
+    box-shadow: 4px 4px 0 #000;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .roblox-privacy-cta-title {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #000;
+    margin-bottom: 1.5rem;
+    text-shadow: 3px 3px 0 rgba(0,0,0,0.1);
+    line-height: 1.2;
+  }
+
+  .roblox-privacy-cta-text {
+    font-size: 1.25rem;
+    color: #555;
+    margin-bottom: 2.5rem;
+    font-weight: 600;
+    line-height: 1.6;
+  }
+
+  .roblox-privacy-cta-actions {
+    margin-bottom: 2rem;
+  }
+
+  .roblox-privacy-cta-button {
+    position: relative;
+    display: inline-block;
+    padding: 1.5rem 3rem;
+    background: linear-gradient(45deg, #4387E3, #551084);
+    color: white;
+    border: 4px solid #000;
+    border-radius: 20px;
+    font-weight: 900;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    box-shadow: 10px 10px 0 #000;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+    transform: translateY(0);
+  }
+
+  .roblox-privacy-cta-button__text {
+    position: relative;
+    z-index: 2;
+  }
+
+  .roblox-privacy-cta-button__glow {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    transition: left 0.6s ease;
+    z-index: 1;
+  }
+
+  .roblox-privacy-cta-button:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 15px 15px 0 #000, 0 25px 50px rgba(67, 135, 227, 0.4);
+  }
+
+  .roblox-privacy-cta-button:hover .roblox-privacy-cta-button__glow {
+    left: 100%;
+  }
+
+  .roblox-privacy-cta-decoration {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .roblox-privacy-cta-brick {
+    width: 30px;
+    height: 20px;
+    border: 3px solid #000;
+    border-radius: 6px;
+    box-shadow: 3px 3px 0 #000;
+    position: relative;
+    animation: cta-brick-bounce 3s ease-in-out infinite;
+  }
+
+  .roblox-privacy-cta-brick::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    background: rgba(255,255,255,0.4);
+    border-radius: 50%;
+    box-shadow: 10px 0 0 rgba(255,255,255,0.4);
+  }
+
+  .roblox-privacy-cta-brick--blue { 
+    background: linear-gradient(135deg, #4387E3, #551084);
+    animation-delay: 0s;
+  }
+  .roblox-privacy-cta-brick--purple { 
+    background: linear-gradient(135deg, #551084, #4387E3);
+    animation-delay: 0.5s;
+  }
+  .roblox-privacy-cta-brick--gray { 
+    background: linear-gradient(135deg, #C0B5B1, #B6ABA8);
+    animation-delay: 1s;
+  }
+</style>

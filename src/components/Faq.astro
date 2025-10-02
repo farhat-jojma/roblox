@@ -1,6 +1,9 @@
 ---
 import { getLangStaticPaths, resolveLang } from "../lib/i18n";
 
+export interface Props {}
+const {} = Astro.props;
+
 export async function getStaticPaths() {
   return getLangStaticPaths();
 }
@@ -9,52 +12,563 @@ const locale = resolveLang(Astro.params.lang);
 const dict = await import(`../locales/${locale}.json`).then((m) => m.default);
 ---
 
-<section id="faq" class="w-full py-16 bg-teal-50" lang={locale}>
-  <div class="max-w-6xl mx-auto px-4">
-    <div class="inline-block px-3 py-1 mb-4 bg-white/90 border-2 border-black shadow-[4px_4px_0_#000]">
-      <span class="text-xs tracking-widest uppercase">{dict.faq}</span>
+<section id="faq" class="w-full py-16 bg-gradient-to-br from-[#EF5B1D] via-[#C46002] to-[#EF5B1D] relative overflow-hidden" lang={locale}>
+  <div class="absolute inset-0 -z-10 roblox-faq-pattern animate-rotate-slow"></div>
+  <div class="max-w-6xl mx-auto px-4 relative z-10">
+    <div class="inline-block px-5 py-3 mb-6 bg-[#551084] text-white border-4 border-black shadow-[6px_6px_0_#000] transform -rotate-1 roblox-faq-badge">
+      <span class="text-sm font-black tracking-widest uppercase">{dict.faq}</span>
     </div>
-    <h2 class="text-3xl sm:text-4xl font-extrabold mb-6 pixel-title">{dict.faqTitle}</h2>
+    <h2 class="text-white text-4xl sm:text-5xl font-black mb-12 roblox-faq-title">{dict.faqTitle}</h2>
 
-    <div class="space-y-4">
-      <details class="bg-white p-5 border-2 border-black shadow-[6px_6px_0_#000]" open>
-        <summary class="font-bold cursor-pointer">{dict.faqCard1Title}</summary>
-        <p class="text-gray-700 mt-3">{dict.faqCard1Text}</p>
+    <div class="space-y-6">
+      <details class="roblox-faq-item roblox-faq-item--1" open>
+        <summary class="roblox-faq-summary">
+          <div class="roblox-faq-icon-container">
+            <span class="roblox-faq-icon">🎮</span>
+            <div class="roblox-faq-icon-glow"></div>
+          </div>
+          <span class="roblox-faq-question">{dict.faqCard1Title}</span>
+          <div class="roblox-faq-toggle-container">
+            <span class="roblox-faq-toggle">+</span>
+            <div class="roblox-toggle-particles"></div>
+          </div>
+        </summary>
+        <div class="roblox-faq-answer">
+          <div class="roblox-answer-content">
+            <p class="text-gray-800 font-medium leading-relaxed">{dict.faqCard1Text}</p>
+            <div class="roblox-answer-decoration">
+              <div class="roblox-mini-brick roblox-mini-brick--orange"></div>
+              <div class="roblox-mini-brick roblox-mini-brick--blue"></div>
+            </div>
+          </div>
+        </div>
       </details>
 
-      <details class="bg-white p-5 border-2 border-black shadow-[6px_6px_0_#000]">
-        <summary class="font-bold cursor-pointer">{dict.faqCard2Title}</summary>
-        <p class="text-gray-700 mt-3">{dict.faqCard2Text}</p>
+      <details class="roblox-faq-item roblox-faq-item--2">
+        <summary class="roblox-faq-summary">
+          <div class="roblox-faq-icon-container">
+            <span class="roblox-faq-icon">🧱</span>
+            <div class="roblox-faq-icon-glow"></div>
+          </div>
+          <span class="roblox-faq-question">{dict.faqCard2Title}</span>
+          <div class="roblox-faq-toggle-container">
+            <span class="roblox-faq-toggle">+</span>
+            <div class="roblox-toggle-particles"></div>
+          </div>
+        </summary>
+        <div class="roblox-faq-answer">
+          <div class="roblox-answer-content">
+            <p class="text-gray-800 font-medium leading-relaxed">{dict.faqCard2Text}</p>
+            <div class="roblox-answer-decoration">
+              <div class="roblox-mini-brick roblox-mini-brick--purple"></div>
+              <div class="roblox-mini-brick roblox-mini-brick--orange"></div>
+            </div>
+          </div>
+        </div>
       </details>
 
-      <details class="bg-white p-5 border-2 border-black shadow-[6px_6px_0_#000]">
-        <summary class="font-bold cursor-pointer">{dict.faqCard3Title}</summary>
-        <p class="text-gray-700 mt-3">{dict.faqCard3Text}</p>
+      <details class="roblox-faq-item roblox-faq-item--3">
+        <summary class="roblox-faq-summary">
+          <div class="roblox-faq-icon-container">
+            <span class="roblox-faq-icon">⚡</span>
+            <div class="roblox-faq-icon-glow"></div>
+          </div>
+          <span class="roblox-faq-question">{dict.faqCard3Title}</span>
+          <div class="roblox-faq-toggle-container">
+            <span class="roblox-faq-toggle">+</span>
+            <div class="roblox-toggle-particles"></div>
+          </div>
+        </summary>
+        <div class="roblox-faq-answer">
+          <div class="roblox-answer-content">
+            <p class="text-gray-800 font-medium leading-relaxed">{dict.faqCard3Text}</p>
+            <div class="roblox-answer-decoration">
+              <div class="roblox-mini-brick roblox-mini-brick--blue"></div>
+              <div class="roblox-mini-brick roblox-mini-brick--purple"></div>
+            </div>
+          </div>
+        </div>
       </details>
 
-      <details class="bg-white p-5 border-2 border-black shadow-[6px_6px_0_#000]">
-        <summary class="font-bold cursor-pointer">{dict.faqCard4Title}</summary>
-        <p class="text-gray-700 mt-3">{dict.faqCard4Text}</p>
+      <details class="roblox-faq-item roblox-faq-item--4">
+        <summary class="roblox-faq-summary">
+          <div class="roblox-faq-icon-container">
+            <span class="roblox-faq-icon">🎯</span>
+            <div class="roblox-faq-icon-glow"></div>
+          </div>
+          <span class="roblox-faq-question">{dict.faqCard4Title}</span>
+          <div class="roblox-faq-toggle-container">
+            <span class="roblox-faq-toggle">+</span>
+            <div class="roblox-toggle-particles"></div>
+          </div>
+        </summary>
+        <div class="roblox-faq-answer">
+          <div class="roblox-answer-content">
+            <p class="text-gray-800 font-medium leading-relaxed">{dict.faqCard4Text}</p>
+            <div class="roblox-answer-decoration">
+              <div class="roblox-mini-brick roblox-mini-brick--orange"></div>
+              <div class="roblox-mini-brick roblox-mini-brick--gray"></div>
+            </div>
+          </div>
+        </div>
       </details>
 
-      <details class="bg-white p-5 border-2 border-black shadow-[6px_6px_0_#000]">
-        <summary class="font-bold cursor-pointer">{dict.faqCard5Title}</summary>
-        <p class="text-gray-700 mt-3">{dict.faqCard5Text}</p>
+      <details class="roblox-faq-item roblox-faq-item--5">
+        <summary class="roblox-faq-summary">
+          <div class="roblox-faq-icon-container">
+            <span class="roblox-faq-icon">🚀</span>
+            <div class="roblox-faq-icon-glow"></div>
+          </div>
+          <span class="roblox-faq-question">{dict.faqCard5Title}</span>
+          <div class="roblox-faq-toggle-container">
+            <span class="roblox-faq-toggle">+</span>
+            <div class="roblox-toggle-particles"></div>
+          </div>
+        </summary>
+        <div class="roblox-faq-answer">
+          <div class="roblox-answer-content">
+            <p class="text-gray-800 font-medium leading-relaxed">{dict.faqCard5Text}</p>
+            <div class="roblox-answer-decoration">
+              <div class="roblox-mini-brick roblox-mini-brick--blue"></div>
+              <div class="roblox-mini-brick roblox-mini-brick--orange"></div>
+            </div>
+          </div>
+        </div>
       </details>
     </div>
 
-    <div class="mt-8">
+    <div class="mt-12 text-center">
       <button onclick="document.getElementById('game').scrollIntoView({ behavior: 'smooth' })" 
-        class="px-5 py-3 bg-yellow-300 hover:bg-yellow-400 transition-colors border-2 border-black shadow-[4px_4px_0_#000] font-semibold">
-        {dict.faqCTA}
+        class="roblox-faq-btn">
+        <span class="roblox-faq-btn__text">{dict.faqCTA}</span>
+        <div class="roblox-faq-btn__glow"></div>
       </button>
     </div>
   </div>
 
+  <!-- Creative Roblox floating elements -->
+  <div class="pointer-events-none absolute inset-0 -z-10">
+    <div class="roblox-floating-stud" style="top:15%;left:8%;"></div>
+    <div class="roblox-floating-stud" style="top:30%;right:12%;"></div>
+    <div class="roblox-floating-stud" style="bottom:25%;left:15%;"></div>
+    <div class="roblox-floating-stud" style="bottom:40%;right:8%;"></div>
+    
+    <div class="roblox-floating-gear" style="top:60%;left:5%;"></div>
+    <div class="roblox-floating-gear" style="top:20%;right:20%;"></div>
+    <div class="roblox-floating-gear" style="bottom:15%;right:25%;"></div>
+  </div>
+
   <style>
-    .pixel-title {
-      text-shadow: 0 0 0 #000, 2px 2px 0 #000, -2px 2px 0 #000;
-      letter-spacing: .5px;
+    .roblox-faq-title {
+      text-shadow: 4px 4px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000;
+      letter-spacing: 2px;
+      color: white;
+    }
+
+    .roblox-faq-badge {
+      border-radius: 12px;
+      position: relative;
+      overflow: hidden;
+    }
+    .roblox-faq-badge::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      animation: badge-shine 5s infinite;
+    }
+
+    @keyframes badge-shine {
+      0% { left: -100%; }
+      100% { left: 100%; }
+    }
+
+    /* FAQ background pattern */
+    .roblox-faq-pattern {
+      background-image: 
+        radial-gradient(circle at 80px 80px, rgba(67, 135, 227, 0.1) 10px, transparent 11px),
+        radial-gradient(circle at 240px 80px, rgba(85, 16, 132, 0.1) 10px, transparent 11px),
+        radial-gradient(circle at 160px 240px, rgba(192, 181, 177, 0.1) 10px, transparent 11px);
+      background-size: 320px 320px;
+    }
+
+    .animate-rotate-slow {
+      animation: rotate-slow 120s linear infinite;
+    }
+
+    @keyframes rotate-slow {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* FAQ items */
+    .roblox-faq-item {
+      background: linear-gradient(135deg, #ffffff, #f8f9fa);
+      border: 4px solid #000;
+      border-radius: 20px;
+      overflow: hidden;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 8px 8px 0 #000;
+    }
+
+    .roblox-faq-item--1 { box-shadow: 8px 8px 0 #4387E3; }
+    .roblox-faq-item--2 { box-shadow: 8px 8px 0 #551084; }
+    .roblox-faq-item--3 { box-shadow: 8px 8px 0 #EF5B1D; }
+    .roblox-faq-item--4 { box-shadow: 8px 8px 0 #C46002; }
+    .roblox-faq-item--5 { box-shadow: 8px 8px 0 #C0B5B1; }
+
+    .roblox-faq-item:hover {
+      transform: translateY(-4px);
+    }
+
+    .roblox-faq-item--1:hover { box-shadow: 12px 12px 0 #4387E3, 0 15px 30px rgba(67, 135, 227, 0.2); }
+    .roblox-faq-item--2:hover { box-shadow: 12px 12px 0 #551084, 0 15px 30px rgba(85, 16, 132, 0.2); }
+    .roblox-faq-item--3:hover { box-shadow: 12px 12px 0 #EF5B1D, 0 15px 30px rgba(239, 91, 29, 0.2); }
+    .roblox-faq-item--4:hover { box-shadow: 12px 12px 0 #C46002, 0 15px 30px rgba(196, 96, 2, 0.2); }
+    .roblox-faq-item--5:hover { box-shadow: 12px 12px 0 #C0B5B1, 0 15px 30px rgba(192, 181, 177, 0.2); }
+
+    .roblox-faq-summary {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 2rem;
+      cursor: pointer;
+      font-weight: 900;
+      font-size: 1.1rem;
+      color: #000;
+      list-style: none;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .roblox-faq-summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .roblox-faq-summary:hover {
+      transform: translateX(8px);
+    }
+
+    /* Enhanced icon container */
+    .roblox-faq-icon-container {
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .roblox-faq-icon {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(45deg, #EF5B1D, #C46002);
+      border: 4px solid #000;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      box-shadow: 6px 6px 0 #000;
+      position: relative;
+      z-index: 2;
+      transition: all 0.3s ease;
+      animation: icon-float 4s ease-in-out infinite;
+    }
+
+    .roblox-faq-icon-glow {
+      position: absolute;
+      inset: -4px;
+      background: radial-gradient(circle, rgba(239, 91, 29, 0.3), transparent);
+      border-radius: 20px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      animation: glow-pulse 3s ease-in-out infinite;
+    }
+
+    .roblox-faq-summary:hover .roblox-faq-icon {
+      transform: scale(1.1) rotate(10deg);
+    }
+
+    .roblox-faq-summary:hover .roblox-faq-icon-glow {
+      opacity: 1;
+    }
+
+    @keyframes icon-float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+
+    @keyframes glow-pulse {
+      0%, 100% { opacity: 0; }
+      50% { opacity: 0.6; }
+    }
+
+    .roblox-faq-question {
+      flex: 1;
+      text-align: left;
+      position: relative;
+    }
+
+    /* Enhanced toggle container */
+    .roblox-faq-toggle-container {
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .roblox-faq-toggle {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(45deg, #4387E3, #551084);
+      border: 4px solid #000;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 1.8rem;
+      color: white;
+      text-shadow: 2px 2px 0 #000;
+      box-shadow: 4px 4px 0 #000;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      z-index: 2;
+    }
+
+    .roblox-toggle-particles {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    .roblox-toggle-particles::before,
+    .roblox-toggle-particles::after {
+      content: '';
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: #EF5B1D;
+      border: 1px solid #000;
+      border-radius: 50%;
+      opacity: 0;
+      animation: particle-burst 2s ease-in-out infinite;
+    }
+
+    .roblox-toggle-particles::before {
+      top: -8px;
+      right: -8px;
+      animation-delay: 0s;
+    }
+
+    .roblox-toggle-particles::after {
+      bottom: -8px;
+      left: -8px;
+      animation-delay: 1s;
+    }
+
+    @keyframes particle-burst {
+      0%, 80%, 100% { opacity: 0; transform: scale(0); }
+      40% { opacity: 1; transform: scale(1.5); }
+    }
+
+    .roblox-faq-item[open] .roblox-faq-toggle {
+      transform: rotate(45deg) scale(1.1);
+      background: linear-gradient(45deg, #EF5B1D, #C46002);
+      box-shadow: 6px 6px 0 #000, 0 0 20px rgba(239, 91, 29, 0.4);
+    }
+
+    .roblox-faq-answer {
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .roblox-answer-content {
+      padding: 0 2rem 2rem 2rem;
+      position: relative;
+      animation: slideDown 0.4s ease-out;
+    }
+
+    .roblox-answer-decoration {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 1rem;
+      justify-content: flex-end;
+    }
+
+    .roblox-mini-brick {
+      width: 16px;
+      height: 12px;
+      border: 2px solid #000;
+      border-radius: 3px;
+      box-shadow: 2px 2px 0 #000;
+      position: relative;
+      animation: mini-brick-bounce 2s ease-in-out infinite;
+    }
+
+    .roblox-mini-brick::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 25%;
+      transform: translateY(-50%);
+      width: 3px;
+      height: 3px;
+      background: rgba(255,255,255,0.6);
+      border-radius: 50%;
+      box-shadow: 6px 0 0 rgba(255,255,255,0.6);
+    }
+
+    .roblox-mini-brick--orange { 
+      background: linear-gradient(135deg, #EF5B1D, #C46002);
+      animation-delay: 0s;
+    }
+    .roblox-mini-brick--blue { 
+      background: linear-gradient(135deg, #4387E3, #551084);
+      animation-delay: 0.3s;
+    }
+    .roblox-mini-brick--purple { 
+      background: linear-gradient(135deg, #551084, #4387E3);
+      animation-delay: 0.6s;
+    }
+    .roblox-mini-brick--gray { 
+      background: linear-gradient(135deg, #C0B5B1, #B6ABA8);
+      animation-delay: 0.9s;
+    }
+
+    @keyframes mini-brick-bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
+    }
+
+    @keyframes slideDown {
+      from { 
+        opacity: 0; 
+        transform: translateY(-20px);
+        max-height: 0;
+      }
+      to { 
+        opacity: 1; 
+        transform: translateY(0);
+        max-height: 200px;
+      }
+    }
+
+    /* FAQ button */
+    .roblox-faq-btn {
+      position: relative;
+      display: inline-block;
+      padding: 1.5rem 3rem;
+      background: linear-gradient(45deg, #4387E3, #551084);
+      color: white;
+      border: 4px solid #000;
+      border-radius: 20px;
+      font-weight: 900;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      box-shadow: 10px 10px 0 #000;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow: hidden;
+      transform: translateY(0);
+    }
+
+    .roblox-faq-btn__text {
+      position: relative;
+      z-index: 2;
+    }
+
+    .roblox-faq-btn__glow {
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+      transition: left 0.6s ease;
+      z-index: 1;
+    }
+
+    .roblox-faq-btn:hover {
+      transform: translateY(-8px) scale(1.05);
+      box-shadow: 15px 15px 0 #000, 0 25px 50px rgba(67, 135, 227, 0.4);
+    }
+
+    .roblox-faq-btn:hover .roblox-faq-btn__glow {
+      left: 100%;
+    }
+
+    /* Creative floating elements */
+    .roblox-floating-stud {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: linear-gradient(45deg, #4387E3, #551084);
+      border: 3px solid #000;
+      border-radius: 50%;
+      box-shadow: 4px 4px 0 #000;
+      animation: stud-float 6s ease-in-out infinite;
+    }
+
+    .roblox-floating-stud::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 8px;
+      height: 8px;
+      background: rgba(255,255,255,0.6);
+      border-radius: 50%;
+      box-shadow: 0 0 0 2px rgba(255,255,255,0.3);
+    }
+
+    .roblox-floating-gear {
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      background: linear-gradient(45deg, #EF5B1D, #C46002);
+      border: 3px solid #000;
+      border-radius: 6px;
+      box-shadow: 4px 4px 0 #000;
+      animation: gear-spin 8s linear infinite;
+      transform-origin: center;
+    }
+
+    .roblox-floating-gear::before {
+      content: '';
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      right: 2px;
+      bottom: 2px;
+      background: linear-gradient(45deg, transparent, rgba(255,255,255,0.2), transparent);
+      border-radius: 3px;
+    }
+
+    .roblox-floating-gear::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 6px;
+      height: 6px;
+      background: #000;
+      border-radius: 50%;
+    }
+
+    @keyframes stud-float {
+      0%, 100% { transform: translateY(0) scale(1); }
+      25% { transform: translateY(-15px) scale(1.1); }
+      50% { transform: translateY(-8px) scale(0.9); }
+      75% { transform: translateY(-20px) scale(1.05); }
+    }
+
+    @keyframes gear-spin {
+      0% { transform: rotate(0deg) translateY(0); }
+      25% { transform: rotate(90deg) translateY(-10px); }
+      50% { transform: rotate(180deg) translateY(0); }
+      75% { transform: rotate(270deg) translateY(-5px); }
+      100% { transform: rotate(360deg) translateY(0); }
     }
   </style>
 </section>

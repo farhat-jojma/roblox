@@ -1,6 +1,9 @@
 ---
 import { getLangStaticPaths, resolveLang } from "../lib/i18n";
 
+export interface Props {}
+const {} = Astro.props;
+
 export async function getStaticPaths() {
   return getLangStaticPaths();
 }
@@ -9,49 +12,252 @@ const locale = resolveLang(Astro.params.lang);
 const dict = await import(`../locales/${locale}.json`).then((m) => m.default);
 ---
 
-<section id="how-to-play" class="w-full py-16 bg-emerald-50" lang={locale}>
-  <div class="max-w-6xl mx-auto px-4">
-    <div class="inline-block px-3 py-1 mb-4 bg-white/90 border-2 border-black shadow-[4px_4px_0_#000]">
-      <span class="text-xs tracking-widest uppercase">{dict.howToPlay}</span>
+<section id="how-to-play" class="w-full py-16 bg-gradient-to-br from-[#4387E3] via-[#551084] to-[#4387E3] text-white relative overflow-hidden" lang={locale}>
+  <div class="absolute inset-0 -z-10 roblox-steps-pattern animate-drift"></div>
+  <div class="max-w-6xl mx-auto px-4 relative z-10">
+    <div class="inline-block px-5 py-3 mb-6 bg-[#EF5B1D] text-white border-4 border-black shadow-[6px_6px_0_#000] transform -rotate-2 roblox-section-badge">
+      <span class="text-sm font-black tracking-widest uppercase">{dict.howToPlay}</span>
     </div>
-    <h2 class="text-3xl sm:text-4xl font-extrabold mb-8 pixel-title">{dict.howToPlayTitle}</h2>
+    <h2 class="text-4xl sm:text-5xl font-black mb-12 roblox-section-title">{dict.howToPlayTitle}</h2>
 
-    <div class="grid md:grid-cols-3 gap-6">
-      <div class="bg-white p-6 border-2 border-black shadow-[6px_6px_0_#000]">
-        <div class="w-8 h-8 bg-emerald-400 border-2 border-black mb-4"></div>
-        <h3 class="font-bold text-xl mb-2">{dict.howToPlayCard1Title}</h3>
-        <p class="text-gray-700">{dict.howToPlayCard1Text}</p>
+    <p class="text-white text-lg max-w-4xl mb-12 font-semibold leading-relaxed">{dict.howToPlayIntro}</p>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+      <div class="roblox-step-card roblox-step-card--1">
+        <div class="roblox-step-number">1</div>
+        <div class="roblox-step-content">
+          <p class="text-white font-medium">{dict.howToPlayStep1}</p>
+        </div>
+        <div class="roblox-step-glow"></div>
       </div>
-
-      <div class="bg-white p-6 border-2 border-black shadow-[6px_6px_0_#000]">
-        <div class="w-8 h-8 bg-gray-200 border-2 border-black mb-4"></div>
-        <h3 class="font-bold text-xl mb-2">{dict.howToPlayCard2Title}</h3>
-        <p class="text-gray-700">{dict.howToPlayCard2Text}</p>
+      <div class="roblox-step-card roblox-step-card--2">
+        <div class="roblox-step-number">2</div>
+        <div class="roblox-step-content">
+          <p class="text-white font-medium">{dict.howToPlayStep2}</p>
+        </div>
+        <div class="roblox-step-glow"></div>
       </div>
-
-      <div class="bg-white p-6 border-2 border-black shadow-[6px_6px_0_#000]">
-        <div class="w-8 h-8 bg-yellow-300 border-2 border-black mb-4"></div>
-        <h3 class="font-bold text-xl mb-2">{dict.howToPlayCard3Title}</h3>
-        <p class="text-gray-700">{dict.howToPlayCard3Text}</p>
+      <div class="roblox-step-card roblox-step-card--3">
+        <div class="roblox-step-number">3</div>
+        <div class="roblox-step-content">
+          <p class="text-white font-medium">{dict.howToPlayStep3}</p>
+        </div>
+        <div class="roblox-step-glow"></div>
+      </div>
+      <div class="roblox-step-card roblox-step-card--4">
+        <div class="roblox-step-number">4</div>
+        <div class="roblox-step-content">
+          <p class="text-white font-medium">{dict.howToPlayStep4}</p>
+        </div>
+        <div class="roblox-step-glow"></div>
+      </div>
+      <div class="roblox-step-card roblox-step-card--5">
+        <div class="roblox-step-number">5</div>
+        <div class="roblox-step-content">
+          <p class="text-white font-medium">{dict.howToPlayStep5}</p>
+        </div>
+        <div class="roblox-step-glow"></div>
+      </div>
+      <div class="roblox-step-card roblox-step-card--6">
+        <div class="roblox-step-number">6</div>
+        <div class="roblox-step-content">
+          <p class="text-white font-medium">{dict.howToPlayStep6}</p>
+        </div>
+        <div class="roblox-step-glow"></div>
       </div>
     </div>
 
-    <div class="mt-8 flex flex-wrap items-center gap-3">
+    <p class="text-white text-lg mb-10 font-semibold text-center max-w-3xl mx-auto">{dict.howToPlayOutro}</p>
+
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
       <button onclick="document.getElementById('game').scrollIntoView({ behavior: 'smooth' })" 
-        class="px-5 py-3 bg-yellow-300 hover:bg-yellow-400 transition-colors border-2 border-black shadow-[4px_4px_0_#000] font-semibold">
-        {dict.howToPlayCTA}
+        class="roblox-action-btn roblox-action-btn--primary">
+        <span class="roblox-action-btn__text">{dict.howToPlayCTA}</span>
+        <div class="roblox-action-btn__shine"></div>
       </button>
       <button onclick="document.getElementById('tips').scrollIntoView({ behavior: 'smooth' })" 
-        class="px-5 py-3 bg-white hover:bg-gray-100 transition-colors border-2 border-black shadow-[4px_4px_0_#000] font-semibold">
-        {dict.howToPlayCTA2}
+        class="roblox-action-btn roblox-action-btn--secondary">
+        <span class="roblox-action-btn__text">{dict.howToPlayCTA2}</span>
+        <div class="roblox-action-btn__shine"></div>
       </button>
     </div>
   </div>
 
   <style>
-    .pixel-title {
-      text-shadow: 0 0 0 #000, 2px 2px 0 #000, -2px 2px 0 #000;
-      letter-spacing: .5px;
+    .roblox-section-title {
+      text-shadow: 4px 4px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000;
+      letter-spacing: 2px;
+      color: white;
+    }
+
+    .roblox-section-badge {
+      border-radius: 12px;
+      position: relative;
+      overflow: hidden;
+    }
+    .roblox-section-badge::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      animation: badge-shine 3s infinite;
+    }
+
+    @keyframes badge-shine {
+      0% { left: -100%; }
+      100% { left: 100%; }
+    }
+
+    /* Steps background pattern */
+    .roblox-steps-pattern {
+      background-image: 
+        radial-gradient(circle at 30px 30px, rgba(255,255,255,0.1) 3px, transparent 4px),
+        radial-gradient(circle at 90px 30px, rgba(192, 181, 177, 0.1) 3px, transparent 4px),
+        radial-gradient(circle at 60px 90px, rgba(239, 91, 29, 0.1) 3px, transparent 4px);
+      background-size: 120px 120px;
+    }
+
+    .animate-drift {
+      animation: drift 25s linear infinite;
+    }
+
+    @keyframes drift {
+      0% { transform: translateX(0) translateY(0); }
+      100% { transform: translateX(-120px) translateY(-120px); }
+    }
+
+    /* Step cards */
+    .roblox-step-card {
+      position: relative;
+      background: linear-gradient(135deg, rgba(0,0,0,0.6), rgba(0,0,0,0.4));
+      border: 4px solid #000;
+      border-radius: 16px;
+      padding: 2rem;
+      overflow: hidden;
+      transform: translateY(0);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .roblox-step-card--1 { box-shadow: 8px 8px 0 #EF5B1D; }
+    .roblox-step-card--2 { box-shadow: 8px 8px 0 #C46002; }
+    .roblox-step-card--3 { box-shadow: 8px 8px 0 #4387E3; }
+    .roblox-step-card--4 { box-shadow: 8px 8px 0 #551084; }
+    .roblox-step-card--5 { box-shadow: 8px 8px 0 #C0B5B1; }
+    .roblox-step-card--6 { box-shadow: 8px 8px 0 #B6ABA8; }
+
+    .roblox-step-card:hover {
+      transform: translateY(-8px) scale(1.02);
+    }
+
+    .roblox-step-card--1:hover { box-shadow: 12px 12px 0 #EF5B1D, 0 15px 30px rgba(239, 91, 29, 0.3); }
+    .roblox-step-card--2:hover { box-shadow: 12px 12px 0 #C46002, 0 15px 30px rgba(196, 96, 2, 0.3); }
+    .roblox-step-card--3:hover { box-shadow: 12px 12px 0 #4387E3, 0 15px 30px rgba(67, 135, 227, 0.3); }
+    .roblox-step-card--4:hover { box-shadow: 12px 12px 0 #551084, 0 15px 30px rgba(85, 16, 132, 0.3); }
+    .roblox-step-card--5:hover { box-shadow: 12px 12px 0 #C0B5B1, 0 15px 30px rgba(192, 181, 177, 0.3); }
+    .roblox-step-card--6:hover { box-shadow: 12px 12px 0 #B6ABA8, 0 15px 30px rgba(182, 171, 168, 0.3); }
+
+    .roblox-step-number {
+      position: absolute;
+      top: -15px;
+      left: -15px;
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(45deg, #EF5B1D, #C46002);
+      border: 4px solid #000;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 1.5rem;
+      color: white;
+      text-shadow: 2px 2px 0 #000;
+      box-shadow: 4px 4px 0 #000;
+      z-index: 2;
+    }
+
+    .roblox-step-content {
+      margin-top: 1rem;
+    }
+
+    .roblox-step-glow {
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(45deg, rgba(255,255,255,0.1), transparent, rgba(255,255,255,0.1));
+      border-radius: 18px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: -1;
+    }
+
+    .roblox-step-card:hover .roblox-step-glow {
+      opacity: 1;
+    }
+
+    /* Action buttons */
+    .roblox-action-btn {
+      position: relative;
+      display: inline-block;
+      padding: 1.25rem 2.5rem;
+      border: 4px solid #000;
+      border-radius: 16px;
+      font-weight: 900;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow: hidden;
+      transform: translateY(0);
+    }
+
+    .roblox-action-btn--primary {
+      background: linear-gradient(45deg, #EF5B1D, #C46002);
+      color: white;
+      box-shadow: 8px 8px 0 #000;
+    }
+
+    .roblox-action-btn--secondary {
+      background: linear-gradient(45deg, #C0B5B1, #B6ABA8);
+      color: black;
+      box-shadow: 8px 8px 0 #000;
+    }
+
+    .roblox-action-btn__text {
+      position: relative;
+      z-index: 2;
+    }
+
+    .roblox-action-btn__shine {
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+      transition: left 0.6s ease;
+      z-index: 1;
+    }
+
+    .roblox-action-btn:hover {
+      transform: translateY(-6px) scale(1.05);
+    }
+
+    .roblox-action-btn--primary:hover {
+      box-shadow: 12px 12px 0 #000, 0 20px 40px rgba(239, 91, 29, 0.4);
+    }
+
+    .roblox-action-btn--secondary:hover {
+      box-shadow: 12px 12px 0 #000, 0 20px 40px rgba(192, 181, 177, 0.4);
+    }
+
+    .roblox-action-btn:hover .roblox-action-btn__shine {
+      left: 100%;
     }
   </style>
 </section>
