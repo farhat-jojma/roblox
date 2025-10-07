@@ -4,13 +4,10 @@ import Game from "../../components/Game.astro";
 import Layout from "../../layouts/Layout.astro";
 import OtherGames from "../../components/OtherGames.astro";
 import HowToPlay from "../../components/HowToPlay.astro";
-import Controls from "../../components/Controls.astro";
 import Tips from "../../components/Tips.astro";
 import Features from "../../components/Features.astro";
 import Unblocked from "../../components/Unblocked.astro";
-import Online from "../../components/Online.astro";
 import Faq from "../../components/Faq.astro";
-import Platform from "../../components/Platform.astro";
 import Footer from "../../components/Footer.astro";
 import { getLangStaticPaths, resolveLang } from "../../lib/i18n";
 
@@ -35,9 +32,6 @@ const dict = await import(`../../locales/${locale}.json`).then((m) => m.default)
         <Features />
         <Unblocked />
         <Faq />
-        <Controls />        
-        <Online />
-        <Platform />
         <Footer />
     </main>
   </div>
